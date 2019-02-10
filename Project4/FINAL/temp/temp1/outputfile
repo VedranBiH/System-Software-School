@@ -1,0 +1,2031 @@
+#!/bin/sh
+# This is a shell archive (produced by GNU sharutils 4.7).
+# To extract the files from this archive, save it to some FILE, remove
+# everything before the `#!/bin/sh' line above, then type `sh FILE'.
+#
+lock_dir=_sh01455
+# Made on 2015-04-23 20:12 EDT by <n00888869@osprey.unfcsd.unf.edu>.
+# Source directory was `/home/69/n00888869/SystemSoft/Project4/FINAL'.
+#
+# Existing files will *not* be overwritten, unless `-c' is specified.
+#
+# This shar contains:
+# length mode       name
+# ------ ---------- ------------------------------------------
+#    832 -rw-r--r-- createFile.java
+#   6256 -rw-r--r-- hashTable.java
+#   5684 -rw-r--r-- lstFile.java
+#  12897 -rw-r--r-- pass2.java
+#  13164 -rw-r--r-- project4.java
+#    869 -rw-r--r-- text
+#   2785 -rw-r--r-- newfile.txt
+#     29 -rwxrwxrwx p4
+#     43 -rw-r--r-- makefile
+#
+MD5SUM=${MD5SUM-md5sum}
+f=`${MD5SUM} --version | egrep '^md5sum .*(core|text)utils'`
+test -n "${f}" && md5check=true || md5check=false
+${md5check} || \
+  echo 'Note: not verifying md5sums.  Consider installing GNU coreutils.'
+save_IFS="${IFS}"
+IFS="${IFS}:"
+gettext_dir=FAILED
+locale_dir=FAILED
+first_param="$1"
+for dir in $PATH
+do
+  if test "$gettext_dir" = FAILED && test -f $dir/gettext \
+     && ($dir/gettext --version >/dev/null 2>&1)
+  then
+    case `$dir/gettext --version 2>&1 | sed 1q` in
+      *GNU*) gettext_dir=$dir ;;
+    esac
+  fi
+  if test "$locale_dir" = FAILED && test -f $dir/shar \
+     && ($dir/shar --print-text-domain-dir >/dev/null 2>&1)
+  then
+    locale_dir=`$dir/shar --print-text-domain-dir`
+  fi
+done
+IFS="$save_IFS"
+if test "$locale_dir" = FAILED || test "$gettext_dir" = FAILED
+then
+  echo=echo
+else
+  TEXTDOMAINDIR=$locale_dir
+  export TEXTDOMAINDIR
+  TEXTDOMAIN=sharutils
+  export TEXTDOMAIN
+  echo="$gettext_dir/gettext -s"
+fi
+if (echo "testing\c"; echo 1,2,3) | grep c >/dev/null
+then if (echo -n test; echo 1,2,3) | grep n >/dev/null
+     then shar_n= shar_c='
+'
+     else shar_n=-n shar_c= ; fi
+else shar_n= shar_c='\c' ; fi
+f=shar-touch.$$
+st1=200112312359.59
+st2=123123592001.59
+st2tr=123123592001.5 # old SysV 14-char limit
+st3=1231235901
+
+if touch -am -t ${st1} ${f} >/dev/null 2>&1 && \
+   test ! -f ${st1} && test -f ${f}; then
+  shar_touch='touch -am -t $1$2$3$4$5$6.$7 "$8"'
+
+elif touch -am ${st2} ${f} >/dev/null 2>&1 && \
+   test ! -f ${st2} && test ! -f ${st2tr} && test -f ${f}; then
+  shar_touch='touch -am $3$4$5$6$1$2.$7 "$8"'
+
+elif touch -am ${st3} ${f} >/dev/null 2>&1 && \
+   test ! -f ${st3} && test -f ${f}; then
+  shar_touch='touch -am $3$4$5$6$2 "$8"'
+
+else
+  shar_touch=:
+  echo
+  ${echo} 'WARNING: not restoring timestamps.  Consider getting and'
+  ${echo} 'installing GNU `touch'\'', distributed in GNU coreutils...'
+  echo
+fi
+rm -f ${st1} ${st2} ${st2tr} ${st3} ${f}
+#
+if test ! -d ${lock_dir}
+then : ; else ${echo} 'lock directory '${lock_dir}' exists'
+  exit 1
+fi
+if mkdir ${lock_dir}
+then ${echo} 'x - created lock directory `'${lock_dir}\''.'
+else ${echo} 'x - failed to create lock directory `'${lock_dir}\''.'
+  exit 1
+fi
+# ============= createFile.java ==============
+if test -f 'createFile.java' && test "$first_param" != -c; then
+  ${echo} 'x -SKIPPING createFile.java (file already exists)'
+else
+${echo} 'x - extracting createFile.java (text)'
+  sed 's/^X//' << 'SHAR_EOF' > 'createFile.java' &&
+X
+/*
+*This class creates the two files .lst and/or .obj
+*
+*/
+X
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+X
+public class createFile {
+X	
+private String nameOfFile;
+private String extension;
+private java.io.File file;
+private ArrayList<String> objFile;
+X
+public createFile(String nameOfFile,ArrayList<String> objFile,String extension) throws FileNotFoundException{
+X	
+X	this.extension = extension;
+X	this.nameOfFile = nameOfFile;
+X	nameOfFile = nameOfFile + extension;
+X	file = new java.io.File(nameOfFile);
+X	this.objFile = objFile;
+X	create();
+X	
+X	
+}
+X
+private void create() throws FileNotFoundException
+{
+X	try(java.io.PrintWriter output = new java.io.PrintWriter(file);)
+X	{
+X		for(int i = 0; i < objFile.size(); i++)
+X		{
+X			output.println(objFile.get(i).toUpperCase());
+X		}
+X	}
+}
+X
+}
+SHAR_EOF
+  (set 20 15 04 23 20 07 42 'createFile.java'; eval "$shar_touch") &&
+  chmod 0644 'createFile.java'
+if test $? -ne 0
+then ${echo} 'restore of createFile.java failed'
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} 'createFile.java: MD5 check failed'
+       ) << \SHAR_EOF
+84b9c07ad264eed467ea72f15e1d988a  createFile.java
+SHAR_EOF
+  else
+test `LC_ALL=C wc -c < 'createFile.java'` -ne 832 && \
+  ${echo} 'restoration warning:  size of createFile.java is not 832'
+  fi
+fi
+# ============= hashTable.java ==============
+if test -f 'hashTable.java' && test "$first_param" != -c; then
+  ${echo} 'x -SKIPPING hashTable.java (file already exists)'
+else
+${echo} 'x - extracting hashTable.java (text)'
+  sed 's/^X//' << 'SHAR_EOF' > 'hashTable.java' &&
+X
+/*
+This program stores the symbol table
+*/
+X
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Scanner;
+X
+public class hashTable {
+X
+private boolean dblLabel = false;
+private boolean noLabel = false;
+private String[] symNumTable = new String[211];	
+private int[] numTable = new int[211];
+private String[] opCode = new String[211];
+private String[] hashTable = new String[211];
+private int key;
+private String[] tokens;
+ArrayList<String> symTable = new ArrayList<String>();
+private int a = 0;	
+public hashTable() throws Exception
+{
+X	
+X	readFile();
+}
+X
+public hashTable(int z)
+{
+X	
+}
+X
+X
+private void readFile() throws Exception
+{
+X	int i = 0;
+X	String[] inputData = new String[211];
+X
+X	java.io.File file = new java.io.File("newfile.txt");//Read the data from the file
+X	Scanner input = new Scanner(file);
+X
+X	  while(input.hasNextLine())
+X      {
+X    	  //Store data into String array
+X         inputData[i] = input.nextLine();
+X         
+X         /*Split first line of data into new String array called tokens
+X          * if the array size is 2 we will store the data
+X          * if the array size is 1 we will search for the data
+X       	*/
+X         
+X         tokens = inputData[i].split("\\s+");
+X         key = convertToChar(tokens[0]);
+X         if(tokens.length > 1)
+X         doStuff();
+X         else
+X        	isThere(tokens[0]);
+X      }
+X	  i++;
+}
+X
+private void doStuff(int z)
+{
+X
+X	int key;
+X    
+X    
+X    /*Split first line of data into new String array called tokens
+X     * if the array size is 2 we will store the data
+X     * if the array size is 1 we will search for the data
+X  	*/
+X    String[] tokens = symTable.get(a).split(" ");
+X  
+X  	//hash
+X    key = convertToChar(tokens[0]);	
+X  dblLabel = false;
+X    if(tokens.length > 2)		
+X    {	
+X   	 
+X   	 
+X   	 boolean control = true;
+X   	 //while not hashTable is not empty (linear probing)
+X       while(hashTable[key] != null)
+X       {
+X       	 if(hashTable[key].equals(tokens[0]))
+X            {
+X       		   dblLabel = true;
+X            	control = false;
+X            }
+X          key++;
+X          key %= 211;
+X       
+X       }
+X       
+X      if(control == true){
+X       hashTable[key]= tokens[0];
+X       symNumTable[key] = tokens[1];
+X       dblLabel = false;
+X       noLabel = false;
+X      }	
+X    }
+X    else if(tokens.length == 1)
+X    {
+X       boolean control = false;
+X       // look until you find it or you find a null
+X       while((hashTable[key]!=null) && !hashTable[key].equals(tokens[0]))
+X       {	
+X          key++;
+X          key %= 211;
+X       
+X        }
+X       //check if it was a null (give an error)
+X       if(hashTable[key] == null)
+X       {
+X     	  noLabel = true;
+X       }
+X       
+X       
+X       else //process the found thing
+X       {
+X          noLabel = false;
+X       	 dblLabel = false;
+X       }
+X    
+X    }
+}
+X
+private int hashKey(int code)
+{
+X   int arraySize = 211;
+X   code = code % arraySize;
+X   return code;
+X
+}//end hashKey
+X
+private int convertToChar(String inputData)
+{
+X   int hashFcn;
+X   int number = 0;
+X   char[] ascii = inputData.toCharArray();
+X   for(int i = 0; i < ascii.length; i++)
+X   {
+X      number = (int)ascii[i] + number;
+X   }
+X	
+X   hashFcn = hashKey(number);
+X
+X   return hashFcn;
+X	
+}//end convertToChar
+X
+private void doStuff()
+{
+X	
+X		 while(hashTable[key] != null)
+X         {
+X         
+X            key++;
+X            key %= 211;
+X         
+X         }
+X         
+X        
+X         hashTable[key]= tokens[0];
+X         numTable[key] = Integer.parseInt(tokens[2]);
+X         opCode[key] = tokens[1];
+X
+X       
+}
+X
+X	
+public boolean isThere(String check)
+{
+X	int newKey = convertToChar(check);
+X    // look until you find it or you find a null
+X    while((hashTable[newKey]!=null))
+X    {	
+X    	if(hashTable[newKey].equals(check))
+X    			return true;
+X    	
+X       newKey++;
+X       newKey %= 211;
+X    
+X       
+X    }
+X       return false;
+X 
+X 
+X 
+}
+X
+public boolean doubleLabel(String check)
+{
+X	int newKey1 = convertToChar(check);
+X	boolean control = true;
+X	while(control)
+X	{
+X	   while(hashTable[newKey1] != null)
+X       {
+X       	 if(hashTable[newKey1].equals(check))
+X            {
+X       		 	control = false;
+X       		 	return true;
+X            	
+X            }
+X          newKey1++;
+X          newKey1 %= 211;
+X       }
+X	}
+X	   return false;
+}
+X
+public int getFormat(String op)
+{
+X	int format;
+X	int newKey = convertToChar(op);
+X	 while((hashTable[newKey]!=null) && !hashTable[newKey].equals(op))
+X	    {	
+X	       newKey++;
+X	       newKey %= 211;
+X	    }
+format = numTable[newKey];
+return format;
+}
+X
+public String getOpcode(String op)
+{
+X	String opC;
+X	int newKey = convertToChar(op);
+X	 while((hashTable[newKey]!=null) && !hashTable[newKey].equals(op))
+X	    {	
+X	       newKey++;
+X	       newKey %= 211;
+X	    }
+opC = opCode[newKey];
+return opC;
+}
+X
+public void setSymTable(String labelAddress)
+X	{
+X		
+X		int z = 2;
+X		symTable.add(labelAddress);
+X		doStuff(z);
+X		a++;
+X	}
+X
+public boolean isEmpty()
+X	{
+X		if(!symTable.isEmpty())
+X			return true;
+X		else
+X		   return false;
+X	}
+X
+public void displayTable()
+X	{
+X		int newKey;
+X		String table ="Table";
+X		String label ="Label";
+X		String address ="Address";
+X		System.out.format("\n\n\n%-10s%-10s%-10s\n",table,label,address);
+X		
+X		for(int i = 0; i < symTable.size(); i++)
+X		{
+X			
+X			String[] tokens1 = symTable.get(i).split(" ");
+X			newKey = convertToChar(tokens1[0]);
+X			while(symNumTable[newKey] != null )
+X			{
+X				newKey++;
+X				newKey %= 211;
+X			}
+X			System.out.format("%-10s%-10s%-10s\n",newKey,tokens1[0],tokens1[1]);
+X		}
+X		
+X		
+X	}
+X
+public String getAddress(String label)
+{
+X	for(int i = 0; i < symTable.size(); i++)
+X	{
+X	String[] tokens = symTable.get(i).split(" ");
+X	if(label.equals(tokens[0]))
+X	return tokens[1];
+X	}
+X	return null;
+}
+X
+public boolean getNoLabel()
+{
+X	return noLabel;
+}
+X
+public boolean getDblLabel()
+{
+X	return dblLabel;
+}
+X
+public void setDblLabel(boolean controller)
+{
+X	dblLabel = controller;
+}
+public void setRemove()
+{
+X	symTable.remove(a-1);
+X	a--;
+}
+X
+public ArrayList<String> getSymTable()
+{
+X	return symTable;
+}
+X
+}//end hashTable
+X
+SHAR_EOF
+  (set 20 15 04 23 20 07 42 'hashTable.java'; eval "$shar_touch") &&
+  chmod 0644 'hashTable.java'
+if test $? -ne 0
+then ${echo} 'restore of hashTable.java failed'
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} 'hashTable.java: MD5 check failed'
+       ) << \SHAR_EOF
+c60b1aeac912b05c9dc301512cf312b6  hashTable.java
+SHAR_EOF
+  else
+test `LC_ALL=C wc -c < 'hashTable.java'` -ne 6256 && \
+  ${echo} 'restoration warning:  size of hashTable.java is not 6256'
+  fi
+fi
+# ============= lstFile.java ==============
+if test -f 'lstFile.java' && test "$first_param" != -c; then
+  ${echo} 'x -SKIPPING lstFile.java (file already exists)'
+else
+${echo} 'x - extracting lstFile.java (text)'
+  sed 's/^X//' << 'SHAR_EOF' > 'lstFile.java' &&
+X
+/*
+This program creates the .lst section
+*/
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+X
+public class lstFile {
+X	
+X	private ArrayList<String> address = new ArrayList<String>();
+X	private ArrayList<String> operands = new ArrayList<String>();
+X	private ArrayList<String> mneumoics = new ArrayList<String>();
+X	private ArrayList<String> opCodes = new ArrayList<String>();
+X	private ArrayList<String> lstfiles = new ArrayList<String>();
+X	private ArrayList<String> reader = new ArrayList<String>();
+X	private ArrayList<String> LTORGString = new ArrayList<String>();
+X	private String args;
+X	public lstFile(ArrayList<String> address, ArrayList<String> operands, ArrayList<String> mneumoics, ArrayList<String> opCodes,ArrayList<String> reader,String args,ArrayList<String> LTORGString) throws FileNotFoundException
+X	{
+X		this.args = args;
+X		this.address = address;
+X		this.operands = operands;
+X		this.mneumoics = mneumoics;
+X		this.opCodes = opCodes;
+X		this.reader = reader;
+X		this.LTORGString = LTORGString;
+X		
+X		createLstFiles();
+X		createFile lstFile = new createFile(args,lstfiles,".lst");
+X	}
+X	
+X	
+X	private void createLstFiles()
+X	{
+X		int number = 1;
+X		//System.out.println("\n\n");
+X	address.add(1, address.get(0));	
+X	int m = 0;
+X	int o = 0;
+X	int a = 0;
+X	String holder = "";
+X		
+X		for(int i = 0; i < reader.size(); i++)
+X		{
+X			String lineNumber = Integer.toString(number);
+X			
+X			
+X			
+X			if(reader.get(i).startsWith("."))
+X					{
+X						lstfiles.add(reader.get(i));
+X					}
+X			else if(reader.get(i).contains(mneumoics.get(m)) && check(mneumoics.get(m)) == false)
+X			{
+X				while(lineNumber.length() < 3)
+X				{
+X					lineNumber = "0" + lineNumber;
+X				}
+X				if(!opCodes.get(o).contains("NULLERINO") && !opCodes.get(o).contains("ERROR") && !opCodes.get(o).contains("vedran") && !opCodes.get(o).contains("LTORG"))
+X				{
+X				lstfiles.add(String.format("%-5s",lineNumber) + String.format("%-5s",address.get(a).toUpperCase()) + String.format("%-10s",opCodes.get(o)) 
+X				+ String.format("%-15s",reader.get(i)));
+X				m++;
+X				o++;
+X				a++;
+X				number++;
+X				}
+X				else if(opCodes.get(o).contains("NULLERINO"))
+X				{	
+X					
+X					lstfiles.add(String.format("%-5s",lineNumber)  + String.format("%-5s",address.get(a).toUpperCase()) 
+X							+ String.format("%-10s",holder) + String.format("%-15s",reader.get(i)));
+X					lstfiles.add(String.format("%-5s", "********** ERROR: Unsupported opcode found in statement"));
+X					
+X					o++;
+X					m++;
+X					a++;
+X					number++;
+X				}
+X				else if(opCodes.get(o).contains("Error"))
+X				{
+X					
+X					lstfiles.add(String.format("%-5s",lineNumber)  + String.format("%-5s",address.get(a).toUpperCase()) 
+X							+ String.format("%-10s",holder) + String.format("%-15s",reader.get(i)));
+X					lstfiles.add(String.format("%-5s", "********** ERROR: Displacement out of range for PC relative"));
+X					o++;
+X					m++;
+X					number++;
+X					a++;
+X				}
+X				else if(opCodes.get(o).contains("vedran"))
+X				{
+X					lstfiles.add(String.format("%-5s",lineNumber)  + String.format("%-5s",address.get(a).toUpperCase()) 
+X							+ String.format("%-10s",holder) + String.format("%-15s",reader.get(i)));
+X					lstfiles.add(String.format("%-5s", "********** ERROR: Operand not found in symbol table"));
+X					o++;
+X					m++;
+X					number++;
+X					a++;
+X				}
+X				
+X				else
+X				{
+X					a++;
+X					o++;
+X					m++;
+X					number++;
+X				}
+X			}
+X			else if(reader.get(i).contains("LTORG"))
+X					{
+X					
+X					int LTORGNumber = 1;
+X					String LTORGLineNumber = Integer.toString(LTORGNumber);
+X					while(LTORGLineNumber.length() < 2)
+X					{
+X						LTORGLineNumber = "0" + LTORGLineNumber;
+X					}
+X					
+X					LTORGLineNumber = "+" + LTORGLineNumber + "+";
+X					
+X					while(lineNumber.length() < 3)
+X						{
+X							lineNumber = "0" + lineNumber;
+X						}
+X					
+X					
+X						lstfiles.add(String.format("%-5s", lineNumber) + String.format("%-15s", address.get(a).toUpperCase()) 
+X								+ String.format("%-1s",reader.get(i)));
+X						a++;
+X						for(int y = 0; y < LTORGString.size(); y++)
+X						{
+X							if(project4.oddOrEven(LTORGString.get(y)) == true)
+X							{
+X								lstfiles.add(String.format("%-5s",LTORGLineNumber) + String.format("%-5s",address.get(a).toUpperCase()) + String.format("%-10s",opCodes.get(o)) + String.format("%-10s",LTORGString.get(y)) 
+X								+ String.format("%-5s","BYTE") + String.format("%11s",LTORGString.get(y)));
+X								a++;
+X								o++;
+X								LTORGNumber++;
+X							}
+X							else
+X							{
+X								a++;
+X								lstfiles.add(String.format("%-5s",LTORGLineNumber) + String.format("%-5s",address.get(a+1).toUpperCase()) + String.format("%-10s",opCodes.get(o)) + String.format("%-10s",LTORGString.get(y)) 
+X										+ String.format("%-5s","BYTE") + String.format("%11s",LTORGString.get(y)));
+X								lstfiles.add("********** ERROR: Odd number of X bytes found in operand field ");
+X							}
+X						}
+X						m++;
+X						number++;
+X					}
+X			else{
+X				while(lineNumber.length() < 3)
+X				{
+X					lineNumber = "0" + lineNumber;
+X				}
+X			
+X				lstfiles.add(String.format("%-5s",lineNumber)  + String.format("%-5s",address.get(a).toUpperCase()) 
+X				+ String.format("%-10s",holder) + String.format("%-15s",reader.get(i)));
+X				m++;
+X				number++;
+X				a++;
+X			}
+X		
+X		}
+X	}
+X	
+X	private boolean check(String checker)
+X	{
+X		switch(checker){
+X		case "BASE":
+X		case "START":
+X		case "RESB":
+X		case "RESW":
+X		case "END":
+X		case "LTORG":
+X			break;
+X			default:
+X				return false;
+X		}
+X		return true;
+X	}
+X	
+X	public void display()
+X	{
+X		for(int i = 0; i < lstfiles.size(); i++ )
+X		{
+X			System.out.println(lstfiles.get(i));
+X		}
+X	}
+X
+}
+SHAR_EOF
+  (set 20 15 04 23 20 07 42 'lstFile.java'; eval "$shar_touch") &&
+  chmod 0644 'lstFile.java'
+if test $? -ne 0
+then ${echo} 'restore of lstFile.java failed'
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} 'lstFile.java: MD5 check failed'
+       ) << \SHAR_EOF
+ed39710f1c55ce51a1cdcd9fac61e51a  lstFile.java
+SHAR_EOF
+  else
+test `LC_ALL=C wc -c < 'lstFile.java'` -ne 5684 && \
+  ${echo} 'restoration warning:  size of lstFile.java is not 5684'
+  fi
+fi
+# ============= pass2.java ==============
+if test -f 'pass2.java' && test "$first_param" != -c; then
+  ${echo} 'x -SKIPPING pass2.java (file already exists)'
+else
+${echo} 'x - extracting pass2.java (text)'
+  sed 's/^X//' << 'SHAR_EOF' > 'pass2.java' &&
+X
+/*
+This class figures out the opcodes for pass2
+*/
+X
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+X
+public class pass2 {
+X	
+private hashTable symTable;
+private ArrayList<String> operands = new ArrayList<String>();
+private ArrayList<String> NI = new ArrayList<String>();
+private ArrayList<String> XBPE = new ArrayList<String>();
+private ArrayList<String> newAddress = new ArrayList<String>();
+private ArrayList<String> mneumoics = new ArrayList<String>();
+private ArrayList<String> address = new ArrayList<String>();
+private ArrayList<String> reader = new ArrayList<String>();
+private ArrayList<String> codes = new ArrayList<String>();
+private ArrayList<String> LTORGString = new ArrayList<String>();
+private hashTable table;
+private int a = 0;
+private boolean baseChecker = false;
+private String baseAddress;
+private boolean PCOutOfRange;
+private String endAddress;
+private String args;
+private lstFile lst;
+private boolean doNotCreateFile = false;
+X
+X
+public pass2(hashTable symTable, ArrayList<String> mneumoics,hashTable table,ArrayList<String> operands,ArrayList<String> address,String args,ArrayList<String> reader,ArrayList<String> LTORGString) throws FileNotFoundException
+X	{
+X	
+X		this.address = address;
+X		this.table = table;
+X		this.mneumoics = mneumoics;
+X		this.symTable = symTable;
+X		this.operands = operands;
+X		this.args = args;
+X		this.reader = reader;
+X		this.LTORGString = LTORGString;
+X		checkForBase();
+X		findEndAddress();
+X		figureOutAddress();
+X		if(doNotCreateFile == false)
+X		{
+X		createFile obj = new createFile(args,newAddress,".obj");
+X		}
+X		lst = new lstFile(address,operands,mneumoics,codes,reader,args,LTORGString);
+X		
+X	}
+X
+private String figureOutNI(String mneumoics,String operands)
+{
+X		if(table.isThere(mneumoics) == true)
+X		{
+X		String holder;
+X		
+X		if(operands.contains("@"))
+X				{
+X					String op2 = "2";
+X					holder = project4.format(table.getOpcode(mneumoics), op2);
+X				}
+X		else if(operands.contains("#"))
+X				{
+X					String op1 = "1";
+X					holder = project4.format(table.getOpcode(mneumoics), op1);
+X				}
+X		else
+X				{
+X					String op3 = "3";
+X					holder = project4.format(table.getOpcode(mneumoics), op3);
+X				}
+X		if(holder.length() == 1)
+X			return ("0" + holder);
+X		else
+X			return (holder);
+X		}	
+X		
+X		else
+X		{
+X			doNotCreateFile = true;
+X			return "NULLERINO";
+X		}
+}
+X
+private String figureOutXBPE(String mneumoics,String operands)
+{
+X		if(check(mneumoics) == false)
+X		{
+X			if(mneumoics.contains("+"))
+X			{
+X				if(operands.contains(","))
+X				{
+X					return "9";
+X				}
+X				else
+X					return "1";
+X			}
+X			else if(PCOutOfRange == true)
+X			{
+X				if(baseChecker = true)
+X				{
+X					return "C";
+X				}
+X				else
+X				return "4";
+X			}
+X			else
+X				return "2";
+X		}
+X		else
+X			return null;
+}
+X
+private void figureOutAddress()
+{	
+X	int o = 0;
+X	
+X	String blah = "";
+X	if(address.get(0).length() < 6)
+X	{
+X		 blah = address.get(0);
+X		while(blah.length()< 6)
+X		{
+X			blah = "0" + blah;
+X		}
+X	}
+X	newAddress.add(blah);
+X	newAddress.add("000000");
+X	
+X	for(int i = 0; i < mneumoics.size();i++)
+X	{
+X		PCOutOfRange = false;
+X		
+X		if(mneumoics.get(i).equals("END"))
+X		{
+X			break;
+X		}
+X		if(mneumoics.get(i).equals("RSUB"))
+X		{
+X			newAddress.add("4F0000");
+X			codes.add("4F0000");
+X			
+X		}
+X		
+X		else if(table.getFormat(mneumoics.get(i)) == 2)
+X		{
+X			String opCode = table.getOpcode(mneumoics.get(i));
+X			String[] tokens = operands.get(i).split(",");
+X			String lastPart = Integer.toString(table.getFormat(tokens[0])) + Integer.toString(table.getFormat(tokens[1]));
+X			newAddress.add(opCode+lastPart);
+X			codes.add(opCode + lastPart);
+X		}
+X		else if(operands.get(i).contains("#") && operands.get(i).substring(1).matches(".*[a-zA-Z].*") == false)
+X		{
+X			String checker = operands.get(i).substring(1);
+X			
+X				checker = operands.get(i).substring(1);
+X				int hexChecker = Integer.parseInt(checker);
+X				checker = Integer.toHexString(hexChecker);
+X				while(checker.length() < 4)
+X				{
+X					checker = "0" + checker;
+X				}
+X				newAddress.add(figureOutNI(mneumoics.get(i),operands.get(o)) + checker);
+X				codes.add(figureOutNI(mneumoics.get(i),operands.get(o)) + checker);
+X			
+X		}
+X		
+X		else if(mneumoics.get(i).equals("WORD"))
+X			{
+X
+X				int hexConvt = Integer.parseInt(operands.get(o));
+X				String holder = Integer.toHexString(hexConvt);
+X				
+X				if(holder.length() < 6)
+X				{
+X					while(holder.length() < 6)
+X					{
+X						holder = "0" + holder;
+X					}
+X				}
+X				
+X				newAddress.add(holder);
+X				codes.add((holder.toUpperCase()));
+X				//a++;
+X			}
+X		else if(mneumoics.get(i).equals("RESW") || mneumoics.get(i).equals("RESB"))
+X		{
+X			newAddress.add("!");
+X			newAddress.add(formatREWS(address.get(a+1)));
+X			newAddress.add("000000");
+X		}
+X		
+X		else if(!(mneumoics.get(i).equals("BASE")) && !(mneumoics.get(i).equals("END")) && !(mneumoics.get(i).equals("START")) && !(mneumoics.get(i).equals("LTORG")))
+X		{
+X			if(mneumoics.get(i).contains("+"))
+X			{
+X				getAddress(operands.get(o));
+X				
+X				if(!figureOutNI(mneumoics.get(i),operands.get(o)).equals("NULLERINO"))
+X				{
+X				newAddress.add(figureOutNI(mneumoics.get(i),operands.get(o)) + 
+X						figureOutXBPE(mneumoics.get(i),operands.get(o)) 
+X						+ getAddress(operands.get(o)));
+X				
+X				
+X				codes.add(figureOutNI(mneumoics.get(i),operands.get(o)).toUpperCase() + 
+X						figureOutXBPE(mneumoics.get(i),operands.get(o)) 
+X						+ getAddress(operands.get(o)).toUpperCase());
+X				}
+X			}
+X			else
+X			{	
+X				
+X				if(operands.get(o).contains(","))
+X				{
+X					String[] tokens = operands.get(o).split(",");
+X					getPCAddress(tokens[0],address.get(a+1));
+X					
+X
+X					if(!figureOutNI(mneumoics.get(i),tokens[0]).equals("NULLERINO") || !getPCAddress(tokens[0],address.get(a+1)).equals("ERROR"))
+X					{
+X					newAddress.add(figureOutNI(mneumoics.get(i),operands.get(o)) + 
+X							figureOutXBPE(mneumoics.get(i),operands.get(o)) +
+X							getPCAddress(tokens[0],address.get(a+1)));
+X					
+X					codes.add(figureOutNI(mneumoics.get(i),operands.get(o)).toUpperCase() + 
+X							figureOutXBPE(mneumoics.get(i),operands.get(o)) +
+X							getPCAddress(tokens[0],address.get(a+1)).toUpperCase());
+X					}
+X					
+X				}
+X				else
+X				{
+X	
+X				getPCAddress(operands.get(o),address.get(a+1));
+X				
+X
+X				if(!figureOutNI(mneumoics.get(i),operands.get(o)).equals("NULLERINO") || !getPCAddress(operands.get(o),address.get(a+1)).equals("ERROR"))
+X				{
+X				newAddress.add(figureOutNI(mneumoics.get(i),operands.get(o)) + 
+X						figureOutXBPE(mneumoics.get(i),operands.get(o)) +
+X						getPCAddress(operands.get(o),address.get(a+1)));
+X				
+X				codes.add(figureOutNI(mneumoics.get(i),operands.get(o)).toUpperCase() + 
+X						figureOutXBPE(mneumoics.get(i),operands.get(o)) +
+X						getPCAddress(operands.get(o),address.get(a+1)).toUpperCase());
+X				}
+X				}
+X			}
+X			
+X		}
+X		if(mneumoics.get(i).equals("START"))
+X		{
+X			o++;
+X		}
+X		else if(mneumoics.get(i).equals("LTORG"))
+X		{
+X			for(int y = 0; y < LTORGString.size(); y++)
+X			{
+X				if(project4.oddOrEven(LTORGString.get(y)) == true)
+X				{
+X					if(LTORGString.get(y).startsWith("=C"))
+X					{
+X						newAddress.add(getCharValue(LTORGString.get(y).substring(3, LTORGString.get(y).length()-1)));
+X						codes.add(getCharValue(LTORGString.get(y).substring(3, LTORGString.get(y).length()-1)));
+X					}
+X					else
+X					{
+X						newAddress.add(LTORGString.get(0).substring(3, LTORGString.get(0).length()-1).trim());
+X						codes.add(LTORGString.get(0).substring(3, LTORGString.get(0).length()-1).trim());
+X					}
+X				}
+X				else
+X				{
+X					doNotCreateFile = true;
+X				}
+X			}
+X		}
+X		else
+X		{
+X			o++;
+X			a++;
+X		}
+X	}
+X	newAddress.add("!");
+}
+X
+X
+private boolean check(String checker)
+{
+X	switch(checker){
+X	case "BASE":
+X	case "WORD":
+X	case "RESB":
+X	case "RESW":
+X	case "END":
+X	case "LTORG":
+X	case "START":
+X		break;
+X		default:
+X			return false;
+X	}
+X	return true;
+}
+X
+private String getAddress(String label)
+{
+X	String result = label.replaceAll("[^\\w\\s]","");
+X	for(int i = 0; i < symTable.getSymTable().size(); i++)
+X	{
+X	String[] tokens = symTable.getSymTable().get(i).split(" ");
+X	if(result.equals(tokens[0]))
+X		{
+X		
+X		return formatExtended(tokens[1]);
+X		
+X		}
+X	}
+X	return null;
+}
+X
+private String getPCAddress(String label,String counter)
+{
+X	
+X	String labelAddress = null;
+X	String address;
+X	if(!label.startsWith("="))
+X	label = label.replaceAll("[^\\w\\s]","");
+X
+X	for(int i = 0; i < symTable.getSymTable().size(); i++)
+X	{
+X	String[] tokens = symTable.getSymTable().get(i).split(" ");
+X	if(label.equals(tokens[0]))
+X	{
+X	labelAddress = tokens[1];
+X	break;
+X	}
+X	else if(i ==  symTable.getSymTable().size()-1 && !label.equals(tokens[0]))
+X	{
+X      doNotCreateFile = true;
+X		return "vedran";
+X	}
+X	}
+X	int hexLabel = Integer.parseInt(labelAddress,16);
+X	int hexPC = Integer.parseInt(counter,16);
+X	int finalAddress = hexLabel - hexPC;
+X	if(checkForPCRange(finalAddress) == false)
+X	{
+X	address = Integer.toHexString(finalAddress);
+X	PCOutOfRange = false;
+X	return formatPC(address);
+X	}
+X	else if (baseChecker == true && checkForPCRange(finalAddress) == true)
+X	{
+X		int LabelBaseAddress = Integer.parseInt(labelAddress,16);
+X		int hexBase = Integer.parseInt(baseAddress,16);
+X		int finalBaseAddress = LabelBaseAddress - hexLabel;
+X		address = Integer.toHexString(finalBaseAddress);
+X		PCOutOfRange = true;
+X		return formatPC(address);
+X	}
+X	else
+X	{
+X		PCOutOfRange = false;
+X		return "Error";
+X	}
+}
+X
+private boolean figureOutB(String label, String counter)
+{
+X	String labelAddress = null;
+X	String address;
+X	
+X	
+X
+X	for(int i = 0; i < symTable.getSymTable().size(); i++)
+X	{
+X	String[] tokens = symTable.getSymTable().get(i).split(" ");
+X	if(label.equals(tokens[0]))
+X	labelAddress = tokens[1];
+X	}
+X	int hexLabel = Integer.parseInt(labelAddress,16);
+X	int hexPC = Integer.parseInt(counter,16);
+X	int finalAddress = hexLabel - hexPC;
+X	if(checkForPCRange(finalAddress) == false)
+X	{
+X	address = Integer.toHexString(finalAddress);
+X	return false;
+X	}
+X	else if (baseChecker == true && checkForPCRange(finalAddress) == true)
+X	{
+X		int LabelBaseAddress = Integer.parseInt(labelAddress,16);
+X		int hexBase = Integer.parseInt(baseAddress,16);
+X		int finalBaseAddress = LabelBaseAddress - hexBase;
+X		address = Integer.toHexString(finalBaseAddress);
+X		return true;
+X	}
+X	else
+X		return false;
+X
+}
+X
+private String formatExtended(String x)
+{
+X	if(x.length() < 5)
+X	{
+X		while(x.length()<5)
+X		{
+X			x = "0" + x;
+X		}
+X	}
+X	return x;
+}
+X
+private String formatPC(String x)
+{
+X	if(x.length()<3)
+X	{
+X		while(x.length()<3)
+X		{
+X			x = "0" + x;
+X		}
+X	}
+X	else if(x.length() > 3)
+X	{
+X		x = x.substring(x.length()-3);
+X	}
+X	return x;
+}
+X
+private void checkForBase()
+{
+X	for(int i = 0; i < mneumoics.size() ;i++)
+X	{
+X		if(mneumoics.get(i).equals("BASE"))
+X		{			
+X			baseChecker = true;
+X			baseAddress = getAddress(operands.get(i));
+X		}
+X	}
+}
+X
+private boolean checkForPCRange(int address)
+{
+X	int max = 2047; 
+X	int min = -2048;
+X
+X	
+X	if(address > max || address < min)
+X	{
+X		return true;
+X	}
+X	else
+X		return false;
+}
+X
+private void findEndAddress()
+{
+X
+X	if(reader.get(reader.size()-1).length() > 19)
+X	{
+X		endAddress = getAddress(operands.get(operands.size()-1));
+X		while(endAddress.length() < 6)
+X		{
+X			endAddress = "0" + endAddress;
+X		}
+X	}
+X	else
+X	{
+X		endAddress = address.get(0);
+X		if(endAddress.length() < 6)
+X		{
+X			while(endAddress.length() < 6)
+X			{
+X				endAddress = "0" + endAddress;
+X			}
+X		}
+X	}
+X	
+X	/*for(int i = 0; i < mneumoics.size(); i++)
+X	{
+X		if(mneumoics.get(i).equals("END"))
+X		{
+X			if(operands.get(operands.size()-1) != null)
+X			{
+X				endAddress = getAddress(operands.get(operands.size()-1));
+X				if(endAddress.length() < 6)
+X				{
+X					while(endAddress.length() < 6)
+X					{
+X						endAddress = "0" + endAddress;
+X					}
+X				}
+X			}
+X			else
+X			{
+X				endAddress = newAddress.get(0);
+X				if(endAddress.length() < 6)
+X				{
+X					while(endAddress.length() < 6)
+X					{
+X						endAddress = "0" + endAddress;
+X					}
+X				}
+X			}
+X		}
+X	}*/
+}
+X
+public void display()
+{
+X	//System.out.println(newAddress.toString());
+X	
+X	for(int j = newAddress.size() - 1; j < newAddress.size(); j-- )
+X	{
+X		if(newAddress.get(j).equals("000000"))
+X		{
+X			newAddress.add(j, endAddress);
+X			newAddress.remove(j+1);
+X			break;
+X		}
+X	}
+X	
+X	for(int i = 0; i < newAddress.size(); i++)
+X	{
+X		System.out.println(newAddress.get(i).toUpperCase());
+X	}
+X	
+X	//lst.display();
+X	
+X			
+}
+X
+private String formatREWS(String x)
+{
+X	while(x.length() < 6)
+X	{
+X		x = "0" + x;
+X	}
+X	
+X	return x;
+}
+X
+private String getCharValue(String x)
+{
+X	String y = "";
+X	char[] values = x.toCharArray();
+X	for(int i = 0; i < values.length; i++)
+X	{
+X		y = y + Integer.toHexString((int)values[i]);
+X	}
+X	return y;
+}
+X
+X
+X
+}//end pass2
+SHAR_EOF
+  (set 20 15 04 23 20 07 42 'pass2.java'; eval "$shar_touch") &&
+  chmod 0644 'pass2.java'
+if test $? -ne 0
+then ${echo} 'restore of pass2.java failed'
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} 'pass2.java: MD5 check failed'
+       ) << \SHAR_EOF
+83fc5471d18086fa62220c9d3a2a270a  pass2.java
+SHAR_EOF
+  else
+test `LC_ALL=C wc -c < 'pass2.java'` -ne 12897 && \
+  ${echo} 'restoration warning:  size of pass2.java is not 12897'
+  fi
+fi
+# ============= project4.java ==============
+if test -f 'project4.java' && test "$first_param" != -c; then
+  ${echo} 'x -SKIPPING project4.java (file already exists)'
+else
+${echo} 'x - extracting project4.java (text)'
+  sed 's/^X//' << 'SHAR_EOF' > 'project4.java' &&
+X
+X
+import java.util.*;
+/*Project 4 Pass 2
+X * Author:Vedran Pehlivanovic
+X * Date:04/23/2015
+X * 
+X * This program is pass 1 of the assembler. It integrates the hash table from project 1 by storing mneumoics and
+X * their formats. Varies methods are used to convert Strings into integers and back into hex strings
+X * Checks for literals and errors.
+X *
+X *Pass 2 is created using lstFile class and pass2 class. It figures out the PC relative addressing and direct addressing. Checks for base if
+X *if the PC relative address is out of range and then uses the base to figure out the base addressing. 
+X * 
+X */
+X
+X
+public class project4 {
+X	
+X
+X
+X   public static void main(String[] args) throws Exception {
+X	   
+X   hashTable table = new hashTable();
+X   hashTable table1 = new hashTable(1);
+X   hashTable table2 = new hashTable(2);  
+X   storeStuff(table,table1,table2,args[0]);
+X   	
+X   }
+X   
+X   public static void storeStuff(hashTable table1,hashTable table3,hashTable table4, String args) throws Exception
+X   {
+X	   
+X	   
+X	   
+X	   java.io.File table = new java.io.File(args);
+X	   
+X	   Scanner input2 = new Scanner(table);
+X	   
+X	   ArrayList<String> reader = new ArrayList<String>();
+X	   
+X	   ArrayList<String> label = new ArrayList<String>();
+X	   
+X	   ArrayList<String> mneumoics = new ArrayList<String>();
+X	   
+X	   ArrayList<String> operands = new ArrayList<String>();
+X	   
+X	   ArrayList<String> address = new ArrayList<String>();
+X	   
+X	   ArrayList<String> LTORGString = new ArrayList<String>();
+X	   
+X	   ArrayList<String> LTORGBytes= new ArrayList<String>();
+X	   
+X	   ArrayList<String> symTable = new ArrayList<String>();
+X	   
+X	   ArrayList<String> lstFile = new ArrayList<String>();
+X	   
+X	   boolean control;
+X	   int i = 0;
+X	   int a = 0;
+X	   int m = 0;
+X	   int o = 0;
+X	   int l = 0;
+X	   int LTORG = 0;
+X	   int literal = 0;
+X	   int append = 0;
+X	   boolean LTORGcontrol = false;
+X	   int LTORGend = 0;
+X	   boolean LTORGinvalid = false;
+X	   int mulLTORG = 1;
+X	   
+X	   while(input2.hasNextLine())
+X	   {
+X		   
+X		   
+X		   control = true;
+X		   reader.add(input2.nextLine()); 
+X		   while(control)
+X		   {	
+X			   //if the line starts with a "." just print it and end the loop
+X			   if(reader.get(i).startsWith("."))
+X			   	{
+X				   //System.out.println(reader.get(i));
+X				   control = false;
+X				   
+X			   
+X			   	}
+X			   //if the line contains "START" 
+X			   else if(reader.get(i).contains("START"))
+X			   {
+X				   //store the address
+X				   address.add(reader.get(i).substring(18,22).trim());
+X				   a++;
+X				   operands.add(reader.get(i).substring(18,22).trim());
+X				   o++;
+X				   
+X				   //System.out.print(address.get(a-1));
+X				   
+X				   //System.out.println("\t" + reader.get(i));
+X				   mneumoics.add("START");
+X				   m++;
+X				   //if there is no space in the label column store a label
+X				if(!reader.get(i).startsWith(" "))
+X				{
+X				   label.add(reader.get(i).substring(0,9).trim());
+X				   table3.setSymTable(label.get(l) + " "  + address.get(a-1));
+X				   l++;
+X				   
+X				}
+X					control = false;
+X			   }
+X			   //if a blank line skip it
+X			   else if(reader.get(i).startsWith(" ") && reader.get(i).length() == 1)
+X			   {
+X				   control = false;
+X			   }
+X			   else
+X			   {
+X				   //store operands
+X				   if(reader.get(i).length() > 28)
+X				   {	
+X					   if(reader.get(i).substring(18,28).trim().contains(",") && table1.getFormat(reader.get(i).substring(9,16).trim()) == 2)
+X					   {
+X						   String check1 = reader.get(i).substring(9,16).trim();
+X						   if(table1.getFormat(check1) == 2)
+X						   {
+X							   operands.add(reader.get(i).substring(18,29).trim());
+X							   o++;
+X						   }
+X					   }
+X					   
+X					   else if(reader.get(i).substring(18, 28).trim().contains(","))
+X				   		{
+X					   		String[] tokens = reader.get(i).substring(18,29).trim().split(",");
+X					   		operands.add(reader.get(i).substring(18,29).trim());
+X					   		o++;
+X				   		}
+X				   		else
+X				   			{
+X				   			operands.add(reader.get(i).substring(18,28).trim());
+X				   			o++;
+X				   			}
+X				   }
+X				   else if(reader.get(i).length() > 15)
+X				   {	
+X					   if(reader.get(i).substring(18).trim().contains(","))
+X					   {
+X						   String check1 = reader.get(i).substring(9,16).trim();
+X						   if(table1.getFormat(check1) == 2)
+X						   {
+X							   operands.add(reader.get(i).substring(18).trim());
+X							   o++;
+X						   }
+X					   }
+X					   else if(reader.get(i).substring(18).trim().contains(","))
+X					   {
+X						   String[] tokens = reader.get(i).substring(18).trim().split(",");
+X						   operands.add(tokens[0]);
+X						   o++;
+X					   }
+X					   	else
+X					   	{
+X						   operands.add(reader.get(i).substring(18).trim());
+X						   o++;
+X					   	}
+X				   }
+X				   
+X				   //store labels
+X				   if(reader.get(i).length() > 8 && !reader.get(i).startsWith(" "))
+X				   {
+X					   label.add(reader.get(i).substring(0,8).trim());
+X					   l++;
+X					   table3.setSymTable(label.get(l-1) + " " + address.get(a-1));
+X				   }
+X				   
+X				   //store mneumoics
+X				   if(reader.get(i).length() > 17)
+X				   {
+X					   mneumoics.add(reader.get(i).substring(9,16).trim());
+X					   
+X				   }
+X				   else
+X				   {
+X					   mneumoics.add(reader.get(i).substring(9).trim());
+X				   }
+X				   
+X
+X				   //store literals
+X				   if(operands.get(o-1).startsWith("=") && reader.get(i).length() > 15 )
+X				   {
+X					   if(operands.get(o-1).contains(","))
+X					   {
+X						   String[] tokens = operands.get(o-1).split(",");
+X					   
+X					   		if(tokens[0].charAt(2) != '\'' || tokens[0].charAt(tokens[0].length()-1) != '\'')
+X					   		{
+X				   			
+X					   			LTORGcontrol = true;
+X					   			LTORGinvalid = true;
+X					   			LTORGBytes.add("0");
+X					   			LTORGString.add(tokens[0]);
+X					   			literal++;
+X					   			LTORG++;
+X					   		}
+X					   			else
+X			   						{
+X				   						LTORGBytes.add(LTORG(tokens[0]));
+X				   						LTORGString.add(tokens[0]);
+X				   						literal++;
+X				   						LTORG++;
+X				   						LTORGcontrol = true;
+X			   						}
+X					   }
+X					   else if(operands.get(o-1).charAt(2) != '\'' || operands.get(o-1).charAt(operands.get(o-1).length()-1) != '\'')
+X							   {
+X						   			
+X						   			LTORGcontrol = true;
+X						   			LTORGinvalid = true;
+X						   			LTORGBytes.add("0");
+X						   			LTORGString.add(operands.get(o-1));
+X						   			literal++;
+X						   			LTORG++;
+X							   }
+X					   else
+X					   {
+X					   LTORGBytes.add(LTORG(operands.get(o-1)));
+X					   LTORGString.add(operands.get(o-1));
+X					   literal++;
+X					   LTORG++;
+X					   LTORGcontrol = true;
+X					   }
+X				   }
+X				   
+X				   //format the Strings into hex integers and add them to the address ArrayList
+X				   
+X				   address.add(format(address.get(a-1),mneumoics.get(m),table1,operands.get(o-1)));
+X				   
+X  
+X				   //System.out.print(address.get(a-1));
+X				   
+X				   a++;
+X				   
+X				   //System.out.println("\t" + reader.get(i));
+X				   
+X				   /*if(table3.getNoLabel() == true)
+X				   {
+X					  System.out.println("********** ERROR: Operand not found in symbol table"); 
+X				   }*/
+X				   if(LTORGinvalid == true)
+X				   {
+X					   //System.out.println("********** WARNING: quote missing in operand field");
+X					   LTORGinvalid = false;
+X				   }
+X				  if(table3.getDblLabel() == true)
+X				   {
+X					  //System.out.println("********** ERROR: Duplicate label found"); 
+X					  table3.setDblLabel(false);
+X					  table3.setRemove();
+X				   }
+X				   
+X				   //check if the mnemoic is valid
+X				   if(table1.isThere(mneumoics.get(m)) == false)
+X				   {
+X					   //System.out.println("********** ERROR: Unsupported opcode found");
+X				   }
+X				    m++;
+X				    
+X				    //print the literals if mneumoics is equal to LTORG
+X				   if(mneumoics.get(m -1).equals("LTORG"))
+X				   {
+X					   LTORGcontrol = false;
+X					   for(int v = mulLTORG - 1; v < LTORGString.size(); v++)
+X					   {
+X						   if(LTORGString.get(v).charAt(2) != '\'' || LTORGString.get(v).charAt(LTORGString.get(v).length()-1) != '\'')
+X						   {
+X							   //System.out.println(address.get(a-1) + "\t" + LTORGString.get(v)+ "   BYTE\t   " + LTORGString.get(v).substring(1));
+X							   //System.out.println("********** ERROR: Invalid hex digit found in the operand");
+X						   }
+X						   //check if the hex is a even number
+X					   else if(oddOrEven(LTORGString.get(v)) == true)
+X						   {
+X						   address.add(format(address.get(a-1),LTORGBytes.get(v)));
+X						   label.add(LTORGString.get(v));
+X						   l++;
+X						   table3.setSymTable(label.get(l-1) + " " + address.get(a-1));
+X						   //System.out.println(address.get(a-1) + "\t" +LTORGString.get(v) + "   BYTE\t   " + LTORGString.get(v).substring(1));
+X						   a++;
+X						   LTORGend++;
+X						   mulLTORG++;
+X						   }
+X						   else if(oddOrEven(LTORGString.get(v)) == false)
+X						   {
+X							   String zero = "0";
+X							   address.add(format(address.get(a-1),zero));
+X							   //System.out.println(address.get(a-1) + "\t" +LTORGString.get(v) + "   BYTE\t   " + LTORGString.get(v));
+X							   //System.out.println("********** ERROR: Odd number of X bytes found in operand field ");
+X							   a++;
+X							   LTORGend++;
+X							   mulLTORG++;
+X							   
+X						   }
+X					   }   
+X	   
+X				   }
+X				   //if there is no LTORG mneumoic print the literals after the END mneumoic
+X				   else if(LTORGcontrol == true)
+X				   {
+X					   if(mneumoics.get(m-1).equals("END"))
+X					   {
+X						   for(int y = LTORGend; y < LTORGString.size(); y++)
+X						   {
+X							   if(oddOrEven(LTORGString.get(y)) == true)
+X							   {
+X								   address.add(format(address.get(a-1),LTORGBytes.get(y)));
+X								   label.add(LTORGString.get(y));
+X								   l++;
+X								   table3.setSymTable(label.get(l-1) + " " + address.get(a-1));
+X								   //System.out.println(address.get(a-1) +"\t" +LTORGString.get(y) + "   BYTE\t   " + LTORGString.get(y));
+X								   a++;
+X							   }
+X							   	else if(oddOrEven(LTORGString.get(y)) == false)
+X							   		{
+X							   			String zero = "0";
+X							   			address.add(format(address.get(a-1),zero));
+X							   			//System.out.println(address.get(a-1) + "\t" +LTORGString.get(y) + "   BYTE\t   " + LTORGString.get(y));
+X							   			//System.out.println("********** ERROR: Odd number of X bytes found in operand field ");
+X							   			a++;
+X							   		}   
+X						   }
+X					   }
+X				   }
+X				  
+X				  
+X				   control = false;
+X			   }
+X		   
+X   }
+X		   
+X		   i++;
+}
+X	   
+X	   //display the table
+X	 //table3.displayTable();
+X	 pass2 table11 = new pass2(table3,mneumoics,table1,operands,address,args,reader,LTORGString);
+X	 //System.out.println();
+X	 //table11.display();
+X   }//end storeStuff
+X   
+/*method parameters are String address, String mn, a hashTable, and String reswString
+X * it calculates the hex address by calling the hashTable and get the format
+X * converts everything into hex strings
+*/
+public static String format(String address, String mn, hashTable table2,String reswString)
+{
+X	String resw = "3";
+X	
+X	
+X	if(mn.equals("RESW"))
+X	{
+X		  int num = Integer.parseInt(address,16);
+X		  int otherNum = Integer.parseInt(reswString);
+X		  int reswNum = Integer.parseInt(resw);
+X		  
+X		  int finalNum = (otherNum * reswNum) + num;
+X		  return hex(finalNum);
+X	}
+X	else if(mn.equals("RESB"))
+X	{
+X		int num = Integer.parseInt(address,16);
+X		int otherNum = Integer.parseInt(reswString);
+X		int finalNum = num + otherNum;
+X		return hex(finalNum);
+X	}
+X	else
+X	{	
+X		int hexFormat = table2.getFormat(mn);
+X		int num = Integer.parseInt(address,16);
+X		int finalnum1 = hexFormat + num;
+X		return hex(finalnum1);
+X	}
+}
+X
+/*Takes in string address, string mn
+X * returns it formatted into a string
+X * formats everything into hex strings
+X */
+public static String format(String address, String mn)
+{
+X	int hexFormat = Integer.parseInt(mn);
+X	int num = Integer.parseInt(address,16);
+X	int finalnum1 = hexFormat + num;
+X	return hex(finalnum1);
+}
+X
+//formats the hex string into a integer
+public static String hex(int dec)
+{
+X	String hex = Integer.toHexString(dec);
+X	return hex;
+}
+X
+/*Takes in a String Literal
+X * checks if it starts with a =X or =C
+X * if it starts with =X makes divides it by 2 and returns that value
+X */
+public static String LTORG(String literal)
+{
+X	
+X	int numOfBytes;
+X	String hexNumOfBytes;
+X	if(literal.startsWith("=X"))
+X	{
+X		literal = literal.substring(3, literal.length()-1);
+X		numOfBytes = literal.length() / 2;
+X		hexNumOfBytes = Integer.toHexString(numOfBytes);
+X		return hexNumOfBytes;
+X	}
+X	else
+X	{
+X		literal = literal.substring(3,literal.length() -1);
+X		numOfBytes = literal.length();
+X		hexNumOfBytes = Integer.toHexString(numOfBytes);
+X		return hexNumOfBytes;
+X	}
+X	
+}
+X
+/*
+X * Checks if a literal that starts with =X is odd or even
+X */
+public static boolean oddOrEven(String literal)
+{
+X	
+X	if(literal.startsWith("=X"))
+X		{
+X	literal = literal.substring(3,literal.length()-1);
+X	if(literal.length()%2 != 0)
+X		return false;
+X		
+X	else
+X		return true;
+X		}
+X	else
+X		return true;
+X	
+}
+X
+}
+SHAR_EOF
+  (set 20 15 04 23 20 07 42 'project4.java'; eval "$shar_touch") &&
+  chmod 0644 'project4.java'
+if test $? -ne 0
+then ${echo} 'restore of project4.java failed'
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} 'project4.java: MD5 check failed'
+       ) << \SHAR_EOF
+4a6379e0818ea382b8499f7b90176c99  project4.java
+SHAR_EOF
+  else
+test `LC_ALL=C wc -c < 'project4.java'` -ne 13164 && \
+  ${echo} 'restoration warning:  size of project4.java is not 13164'
+  fi
+fi
+# ============= text ==============
+if test -f 'text' && test "$first_param" != -c; then
+  ${echo} 'x -SKIPPING text (file already exists)'
+else
+${echo} 'x - extracting text (text)'
+  sed 's/^X//' << 'SHAR_EOF' > 'text' &&
+Name:Vedran Pehlivanovic
+Class:Introduction to Systems Software - COP 3404 TR 12:00pm - 1:40pm
+Project4
+X
+Description:
+X
+Project 4 uses pass 1 from project 4 to create pass 2
+Pass 2 completes pass 1 by creating the .obj file and the .lst file. Pass 2 is able to compute PC relative addressing and Direct addressing. If the PC relative addressing is out of range it then checks if there is a base declared and does base addressing. If base addressing is out of range then it will give a error. Aswell for PC relative being out of range if base isn't declared. It checks for certain errors that were computed in pass 1 but including invalid labels as well.
+X
+Output: No console output but a .obj file is created if no errors are reported and a .lst file is created regardless.
+X
+Input: The file being passed by the professor and the SicOps table is included with the project
+SHAR_EOF
+  (set 20 15 04 23 18 29 38 'text'; eval "$shar_touch") &&
+  chmod 0644 'text'
+if test $? -ne 0
+then ${echo} 'restore of text failed'
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} 'text: MD5 check failed'
+       ) << \SHAR_EOF
+9c9cb3c9966fff7b9ec4509ad7995d68  text
+SHAR_EOF
+  else
+test `LC_ALL=C wc -c < 'text'` -ne 869 && \
+  ${echo} 'restoration warning:  size of text is not 869'
+  fi
+fi
+# ============= newfile.txt ==============
+if test -f 'newfile.txt' && test "$first_param" != -c; then
+  ${echo} 'x -SKIPPING newfile.txt (file already exists)'
+else
+${echo} 'x - extracting newfile.txt (text)'
+  sed 's/^X//' << 'SHAR_EOF' > 'newfile.txt' &&
++LDB    68    4   3
+MULR    98    2   0
++SSK    EC    4   0
+WD      DC    3   1
+*STX    10    3   0
+*OR     44    3   3
+AND     40    3   3
+*LDA    00    3   3
++JGT    34    4   0
++STL    14    4   0
+*WD     DC    3   1
++STI    D4    4   0
+LPS     D0    3   0
++LDT    74    4   3
+*LDCH   50    3   1
+*LDL    08    3   3
+TIXR    B8    2   0
+SUBF    5C    3   0
+*JSUB   48    3   0
+LDX     04    3   3
++MULF   60    4   0
++J      3C    4   0
+SVC     B0    2   0
+STT     84    3   0
++COMP   28    4   3
+TIX     2C    3   0
+FLOAT   C0    1   0
+LDT     74    3   3
+STA     0C    3   0
+*TD     E0    3   1
+SHIFTR  A8    2   0
+STB     78    3   0
+SIO     F0    1   0
+LDA     00    3   3
+HIO     F4    1   0
++STS    7C    4   0
+DIVF    64    3   0
+*TIX    2C    3   0
++JSUB   48    4   0
+LDCH    50    3   1
++COMPF  88    4   0
+JEQ     30    3   0
+*DIV    24    3   3
++STT    84    4   0
++SUBF   5C    4   0
+*AND    40    3   3
++OR     44    4   3
+SSK     EC    3   0
++JLT    38    4   0
+*RD     D8    3   1
+LDS     6C    3   3
+*MUL    20    3   3
++LDS    6C    4   3
++DIV    24    4   3   
+J       3C    3   0
++MUL    20    4   3
+*COMP   28    3   3
++STX    10    4   0
+*J      3C    3   0
++LDA    00    4   3
++SUB    1C    4   3
++STB    78    4   0
+*JLT    38    3   0
+SUB     1C    3   3
++ADDF   58    4   0
+RD      D8    3   1
+*JEQ    30    3   0
+LDB     68    3   3
+RSUB    4C    3   0
+MULF    60    3   0
+JSUB    48    3   0
+SUBR    94    2   0
+DIVR    9C    2   0
+LDL     08    3   3
++JEQ    30    4   0
++STCH   54    4   0
+*STL    14    3   0
++STA    0C    4   0
+STSW    E8    3   0
+COMPF   88    3   0
++DIVF   64    4   0
++STF    80    4   0
+TIO     F8    1   0
+*ADD    18    3   3
+*STSW   E8    3   0
++STSW   E8    4   0
++LPS    D0    4   0
+JLT     38    3   0
+*JGT    34    3   0
+MUL     20    3   3
++LDL    08    4   3
+OR      44    3   3
+COMP    28    3   3
+TD      E0    3   1
+STS     7C    3   0
+*STCH   54    3   0
+LDF     70    3   0
+ADD     18    3   3
+FIX     C4    1   0
+*RSUB   4C    3   0
+NORM    C8    1   0
+STF     80    3   0
+*LDX    04    3   3
+CLEAR   B4    2   0
++RSUB   4C    4   0
+ADDF    58    3   0
++WD     DC    4   1
++LDCH   50    4   1
++LDF    70    4   0
++LDX    04    4   3
+STCH    54    3   0
++ADD    18    4   3
++AND    40    4   3
+*SUB    1C    3   3
+STX     10    3   0
+RMO     AC    2   0
+COMPR   A0    2   0
+SHIFTL  A4    2   0
+STL     14    3   0
++TD     E0    4   1
+ADDR    90    2   0
+STI     D4    3   0
++TIX    2C    4   0
+*STA    0C    3   0
+JGT     34    3   0
+DIV     24    3   3
++RD     D8    4   1
+A       0     0
+XX       0     1 
+L       0     2
+PC      0     8
+SW      0     9
+B       0     3
+S       0     4
+T       0     5
+F       0     6
+WORD    0     3
+RESW    0     1
+BASE    0     0
+END     0     0  
+LTORG   0     0
+RESB    0     1
+SHAR_EOF
+  (set 20 15 04 22 18 41 09 'newfile.txt'; eval "$shar_touch") &&
+  chmod 0644 'newfile.txt'
+if test $? -ne 0
+then ${echo} 'restore of newfile.txt failed'
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} 'newfile.txt: MD5 check failed'
+       ) << \SHAR_EOF
+ffd494f2ffe322411c256530195915a3  newfile.txt
+SHAR_EOF
+  else
+test `LC_ALL=C wc -c < 'newfile.txt'` -ne 2785 && \
+  ${echo} 'restoration warning:  size of newfile.txt is not 2785'
+  fi
+fi
+# ============= p4 ==============
+if test -f 'p4' && test "$first_param" != -c; then
+  ${echo} 'x -SKIPPING p4 (file already exists)'
+else
+${echo} 'x - extracting p4 (text)'
+  sed 's/^X//' << 'SHAR_EOF' > 'p4' &&
+#!/bin/bash
+java project4 $1
+SHAR_EOF
+  (set 20 15 04 23 18 20 51 'p4'; eval "$shar_touch") &&
+  chmod 0777 'p4'
+if test $? -ne 0
+then ${echo} 'restore of p4 failed'
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} 'p4: MD5 check failed'
+       ) << \SHAR_EOF
+23f204091224f19c62b3ea9eb8d009ce  p4
+SHAR_EOF
+  else
+test `LC_ALL=C wc -c < 'p4'` -ne 29 && \
+  ${echo} 'restoration warning:  size of p4 is not 29'
+  fi
+fi
+# ============= makefile ==============
+if test -f 'makefile' && test "$first_param" != -c; then
+  ${echo} 'x -SKIPPING makefile (file already exists)'
+else
+${echo} 'x - extracting makefile (text)'
+  sed 's/^X//' << 'SHAR_EOF' > 'makefile' &&
+project4.class:project4.java
+X	javac *.java
+SHAR_EOF
+  (set 20 15 04 23 18 20 16 'makefile'; eval "$shar_touch") &&
+  chmod 0644 'makefile'
+if test $? -ne 0
+then ${echo} 'restore of makefile failed'
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} 'makefile: MD5 check failed'
+       ) << \SHAR_EOF
+dfd8de9897cae5f27c7bb9883fddef7d  makefile
+SHAR_EOF
+  else
+test `LC_ALL=C wc -c < 'makefile'` -ne 43 && \
+  ${echo} 'restoration warning:  size of makefile is not 43'
+  fi
+fi
+if rm -fr ${lock_dir}
+then ${echo} 'x - removed lock directory `'${lock_dir}\''.'
+else ${echo} 'x - failed to remove lock directory `'${lock_dir}\''.'
+  exit 1
+fi
+exit 0

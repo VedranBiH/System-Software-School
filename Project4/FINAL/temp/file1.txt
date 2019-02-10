@@ -1,0 +1,11 @@
+THREE     START    100                                         
+          BASE     HERE
+          LDX     =X'1400'                                        
+          LDS     #3                                       
+LOOP      LDB     #HERE                                   
+          LDA      HERE,X
+          LTORG                  
+          STX      FORX                                      
+          BASE     THERE                                    
+          LDB     #THERE                                   
+          LDX      REVX                          

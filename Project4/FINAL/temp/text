@@ -1,0 +1,12 @@
+Name:Vedran Pehlivanovic
+Class:Introduction to Systems Software - COP 3404 TR 12:00pm - 1:40pm
+Project4
+
+Description:
+
+Project 4 uses pass 1 from project 4 to create pass 2
+Pass 2 completes pass 1 by creating the .obj file and the .lst file. Pass 2 is able to compute PC relative addressing and Direct addressing. If the PC relative addressing is out of range it then checks if there is a base declared and does base addressing. If base addressing is out of range then it will give a error. Aswell for PC relative being out of range if base isn't declared. It checks for certain errors that were computed in pass 1 but including invalid labels as well.
+
+Output: No console output but a .obj file is created if no errors are reported and a .lst file is created regardless.
+
+Input: The file being passed by the professor and the SicOps table is included with the project

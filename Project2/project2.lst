@@ -1,0 +1,44 @@
+*********************************************
+University of North Florida: SIC/XE assembler
+version date 11/12/2002
+account: n00888869; Tue Oct 13 11:48:22 2015
+*********************************************
+ASSEMBLER REPORT
+----------------
+     Loc   Object Code       Source Code
+     ---   -----------       -----------
+001- 00100                          START  100
+002- 00100 072036            DWN    LDX    BEG   LOAD INTO X BEG
+003- 00103 03A039                   LDA    ARR,X LOAD INTO ACC ARR INCR BY X			
+004- 00106 0F202D                   STA    TEM   STORE ACC INTO TEM
+005- 00109 072030                   LDX    LAST  LOAD INTO X LAST
+006- 0010C 03A030                   LDA    ARR,X LOAD ARR INCR BY X
+007- 0010F 072027                   LDX    BEG   LOAD INTO X BEG
+008- 00112 0FA02A                   STA    ARR,X STORE ACC INTO ARR INCR BY X
+009- 00115 03201E                   LDA    TEM   LOAD INTO ACC TEM
+010- 00118 072021                   LDX    LAST  LOAD INTO X LAST
+011- 0011B 0FA021                   STA    ARR,X STORE ACC INTO ARR INCR BY X
+012- 0011E 032018                   LDA    BEG   LOAD INTO ACC BEG
+013- 00121 190003                   ADD    #3    ADD 3 TO BEG
+014- 00124 0F2012                   STA    BEG   STORE ACC  INTO BEG
+015- 00127 032012                   LDA    LAST  LOAD INTO ACC LAST
+016- 0012A 1D0003                   SUB    #3    SUBTRACT 3 FROM LAST
+017- 0012D 0F200C                   STA    LAST  STORE ACC INTO LAST
+018- 00130                          J      LOOP  JUMP TO LOOP	
+********** ERROR: Operand not found in symbol table [#5 on line 18]
+019- 00133 4F0000            GRT           RSUB   			  
+020- 00136                   	      END
+021- 00136 000001            TEM    WORD  1 	 TEMP LABEL TO HOLD VALUE
+022- 00139 000000            BEG    WORD  0   BEGINING INDEX OF ARRAY
+023- 0013C 00001B            LAST   WORD  27  LAST INDEX OF ARRAY
+024-                         .                ( to change multiply number of elements minus 1 by 3)
+025- 0013F 000001            ARR    WORD  1   ARRAY OF NUMBERS
+026- 00142 000002                   WORD  2
+027- 00145 000003                   WORD  3
+028- 00148 000004                   WORD  4
+029- 0014B 000005                   WORD  5
+030- 0014E 000006                   WORD  6
+031- 00151 000007                   WORD  7
+032- 00154 000008                   WORD  8
+033- 00157 000009                   WORD  9
+034- 0015A 00000A                   WORD  10

@@ -1,0 +1,34 @@
+THREE     START    100                                         
+          BASE     HERE
+          LDX     =X'1400'                                        
+          LDS     #3                                       
+LOOP      LDB     #HERE                                   
+          LDA      HERE,X
+          LTORG                  
+          STX      FORX                                      
+          BASE     THERE                                    
+          LDB     #THERE                                   
+          LDX      REVX                                           
+          SUBR     S,X                                           
+          STA      THERE,X                                      
+          STX      REVX                                        
+          LDX      FORX                                      
+          TIX      LIMIT                                    
+         +TIX      LIMIT                                   
+         +TIX      LIMIT                                  
+          JLT      LOOP                                      
+          LDA     @ADD                                      
+          RSUB                                             
+LIMIT     WORD     15                                     
+REVX      WORD     4800                                     
+FORX      RESW     1                                       
+ADD       WORD     99                                     
+          WORD     2                                     
+          WORD     3                                    
+          WORD     4                                   
+          WORD     5                                        
+          RESW     1595                                    
+THERE     RESW     1600                                   
+HERE      WORD     1                                     
+NOW       WORD     4
+          END

@@ -1,0 +1,12 @@
+001  100            ADDRES    START    100
+002  100  69100116  NOW      +LDB     #BEGIN
+003  104            XXX       BASE     BEGIN 
+004  104  03200C    YYY       LDA      BE
+005  107                      RESW     4
+006  113  000002    BE        WORD     2 
+007  116            BEGIN     RESW     1
+008  119            JUNK      RESW     2200 
+009  1AE1           THERE     RESW     1   
+010  1AE4 03C000    ZZZ       LDA      JUNK 
+011  1AE7 0F2FF7    MMM       STA      THERE 
+012  1AEA                     END      NOW

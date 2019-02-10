@@ -1,0 +1,14 @@
+Name:Vedran Pehlivanovic
+Class: Introduction to Systems Software - COP 3404 TR 12:00pm - 1:40pm
+Project 3
+
+Description:
+
+Project 3 creates pass 1
+Pass 1 constructs a symbol table, the addresses associated with each instruction, the addresses of each label.
+It reads a input file in a fixed format and stores labels,addresses,mneumonics, and comments into ArrayLists
+Error checks are performed such as duplicately defined labels,and invalid mneumonics which are  ignored in maintaining addresses and the assembler continues processing.
+
+Output: To the console is text file and the symbol table
+
+Input: Is the instruction list file and a file that will be assembled for pass 1

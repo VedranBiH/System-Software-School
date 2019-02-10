@@ -1,0 +1,9 @@
+001  100            ADDRES    START    100
+002  100  69100110  NOW      +LDB     #BEG
+003  104            XXX       BASE     BEG 
+004  104  032000    YYY       LDA      BE   
+005  107  000002    BE        WORD     2 
+006  10A  032003    ZZZ       LDA      BEG
+007  10D  0F2000    MMM       STA      BEG
+008  110  000005    BEG       WORD     5
+009  113                      END      NOW

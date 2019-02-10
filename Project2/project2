@@ -1,0 +1,39 @@
+       START  100
+DWN    LDX    BEG   Load into X BEG
+       LDA    ARR,X Load into acc ARR incr by X			
+       STA    TEM   Store acc into TEM
+       LDX    LAST  Load into X LAST
+       LDA    ARR,X Load ARR incr by X
+       LDX    BEG   Load into X BEG
+       STA    ARR,X Store acc into ARR incr by X
+       LDA    TEM   Load into acc TEM
+       LDX    LAST  Load into X LAST
+       STA    ARR,X Store acc into ARR incr by X
+       LDA    BEG   Load into acc BEG
+       ADD    #3    Add 3 to BEG
+       STA    BEG   Store acc  into BEG
+       LDA    LAST  Load into acc LAST
+       SUB    #3    Subtract 3 from LAST
+       STA    LAST  Store acc into LAST
+       J      LOOP  Jump to LOOP	
+GRT           RSUB   			  
+	      END
+
+
+
+	
+TEM    WORD  1 	 Temp label to hold value
+BEG    WORD  0   Begining index of Array
+LAST   WORD  27  Last index of array
+.                ( to change multiply number of elements minus 1 by 3)
+ARR    WORD  1   Array of numbers
+       WORD  2
+       WORD  3
+       WORD  4
+       WORD  5
+       WORD  6
+       WORD  7
+       WORD  8
+       WORD  9
+       WORD  10
+

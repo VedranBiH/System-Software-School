@@ -1,0 +1,16 @@
+Name:Vedran Pehlivanovic
+Class:Introduction to Systems Software - COP 3404 TR 12:00pm - 1:40pm
+Project 1
+
+Description: 
+
+Project 1 creates a symbol table to be used by pass 1 and pass 2(projects 3 and 4) for systems software
+A file is to be read at command line. 
+A hash table is used to store the data if the data input is in the format of String Int. Will report if the data has
+already been stored.
+If the data input is only a String then a search function is used to find the data and gives a error if it can't find it.
+
+Input: a text file using Scanner
+
+Output: Tells the user where the data was stored, if you are trying to store the same data, where you can find the data,
+and if the data you searched for is not in the hash table.

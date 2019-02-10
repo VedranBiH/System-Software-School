@@ -1,0 +1,4 @@
+ADDRES    START    100                           
+NOW       LDB     =X'1400'
+          LTORG
+          END      NOW 

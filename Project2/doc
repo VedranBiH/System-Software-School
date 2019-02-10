@@ -1,0 +1,11 @@
+COP 3404 Project 2
+Author: Vedran Pehlivanovic
+Date: 02-04-2015
+
+
+This program is written in SIC/XE it stores an array of ten integers and then reverses the order.
+The ten integers are initialized in memory via WORD storage. It then reverses the original list.
+
+There is no user input
+
+output via dump shows the location of the integers. Locations are commented in the sic.log.Output may be changed with minor modifications.

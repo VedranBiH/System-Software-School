@@ -1,0 +1,22 @@
+PGM       START    100
+          J        DNNNN
+X         WORD     5
+Y         WORD     6
+ANS       RESW     1
+          BASE     XX
+DNNNN     LDB     #XX
+          LDX      NUM
+          LDX     #9
+          LDA     =X'1400',X   LITERAL, WORKS LIKE STG
+          LDA     =C'14       LITERAL, WORKS LIKE STG
+          LDA     =C'ABC'      LITERAL, WORKS LIKE STG
+          J        DN
+          LTORG
+DN        LDS     #14
+          LDT     =C'ABCD'     LITERAL, REG T WILL
+          LTORG
+          SUB     =X'1E'
+XX        RSUB
+BIG       RESB     3999
+NUM       RESW     3
+          END

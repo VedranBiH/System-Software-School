@@ -1,0 +1,874 @@
+#!/bin/sh
+# This is a shell archive (produced by GNU sharutils 4.7).
+# To extract the files from this archive, save it to some FILE, remove
+# everything before the `#!/bin/sh' line above, then type `sh FILE'.
+#
+lock_dir=_sh24935
+# Made on 2015-03-26 19:23 EDT by <n00888869@osprey.unfcsd.unf.edu>.
+# Source directory was `/home/69/n00888869/SystemSoft/Project3'.
+#
+# Existing files will *not* be overwritten, unless `-c' is specified.
+#
+# This shar contains:
+# length mode       name
+# ------ ---------- ------------------------------------------
+#    588 -rw-r--r-- file1.txt
+#   1057 -rw-r--r-- file.txt
+#   5568 -rw-r--r-- hashTable.java
+#  11419 -rw-r--r-- project3.java
+#     29 -rwxrwxrwx p3
+#    675 -rw-r--r-- text
+#     43 -rw-r--r-- makefile
+#
+MD5SUM=${MD5SUM-md5sum}
+f=`${MD5SUM} --version | egrep '^md5sum .*(core|text)utils'`
+test -n "${f}" && md5check=true || md5check=false
+${md5check} || \
+  echo 'Note: not verifying md5sums.  Consider installing GNU coreutils.'
+save_IFS="${IFS}"
+IFS="${IFS}:"
+gettext_dir=FAILED
+locale_dir=FAILED
+first_param="$1"
+for dir in $PATH
+do
+  if test "$gettext_dir" = FAILED && test -f $dir/gettext \
+     && ($dir/gettext --version >/dev/null 2>&1)
+  then
+    case `$dir/gettext --version 2>&1 | sed 1q` in
+      *GNU*) gettext_dir=$dir ;;
+    esac
+  fi
+  if test "$locale_dir" = FAILED && test -f $dir/shar \
+     && ($dir/shar --print-text-domain-dir >/dev/null 2>&1)
+  then
+    locale_dir=`$dir/shar --print-text-domain-dir`
+  fi
+done
+IFS="$save_IFS"
+if test "$locale_dir" = FAILED || test "$gettext_dir" = FAILED
+then
+  echo=echo
+else
+  TEXTDOMAINDIR=$locale_dir
+  export TEXTDOMAINDIR
+  TEXTDOMAIN=sharutils
+  export TEXTDOMAIN
+  echo="$gettext_dir/gettext -s"
+fi
+if (echo "testing\c"; echo 1,2,3) | grep c >/dev/null
+then if (echo -n test; echo 1,2,3) | grep n >/dev/null
+     then shar_n= shar_c='
+'
+     else shar_n=-n shar_c= ; fi
+else shar_n= shar_c='\c' ; fi
+f=shar-touch.$$
+st1=200112312359.59
+st2=123123592001.59
+st2tr=123123592001.5 # old SysV 14-char limit
+st3=1231235901
+
+if touch -am -t ${st1} ${f} >/dev/null 2>&1 && \
+   test ! -f ${st1} && test -f ${f}; then
+  shar_touch='touch -am -t $1$2$3$4$5$6.$7 "$8"'
+
+elif touch -am ${st2} ${f} >/dev/null 2>&1 && \
+   test ! -f ${st2} && test ! -f ${st2tr} && test -f ${f}; then
+  shar_touch='touch -am $3$4$5$6$1$2.$7 "$8"'
+
+elif touch -am ${st3} ${f} >/dev/null 2>&1 && \
+   test ! -f ${st3} && test -f ${f}; then
+  shar_touch='touch -am $3$4$5$6$2 "$8"'
+
+else
+  shar_touch=:
+  echo
+  ${echo} 'WARNING: not restoring timestamps.  Consider getting and'
+  ${echo} 'installing GNU `touch'\'', distributed in GNU coreutils...'
+  echo
+fi
+rm -f ${st1} ${st2} ${st2tr} ${st3} ${f}
+#
+if test ! -d ${lock_dir}
+then : ; else ${echo} 'lock directory '${lock_dir}' exists'
+  exit 1
+fi
+if mkdir ${lock_dir}
+then ${echo} 'x - created lock directory `'${lock_dir}\''.'
+else ${echo} 'x - failed to create lock directory `'${lock_dir}\''.'
+  exit 1
+fi
+# ============= file1.txt ==============
+if test -f 'file1.txt' && test "$first_param" != -c; then
+  ${echo} 'x -SKIPPING file1.txt (file already exists)'
+else
+${echo} 'x - extracting file1.txt (binary)'
+  sed 's/^X//' << 'SHAR_EOF' | uudecode &&
+begin 600 file1.txt
+M4$=-("`@("`@(%-405)4("`@(#$P,`H@("`@("`@("`@2B`@("`@("`@1$Y.
+M3DX*6"`@("`@("`@(%=/4D0@("`@(#4*62`@("`@("`@(%=/4D0@("`@(#8*
+M04Y3("`@("`@(%)%4U<@("`@(#$*("`@("`@("`@($)!4T4@("`@(%A8"D1.
+M3DY.("`@("!,1$(@("`@("-86`H@("`@("`@("`@3$18("`@("`@3E5-"B`@
+M("`@("`@("!,1%@@("`@(",Y"B`@("`@("`@("!,1$$@("`@(#U8)S$T,#`G
+M+%@@("!,251%4D%,+"!73U)+4R!,24M%(%-41PH@("`@("`@("`@3$1!("`@
+M("`]0R<Q-"`@("`@("!,251%4D%,+"!73U)+4R!,24M%(%-41PH@("`@("`@
+M("`@3$1!("`@("`]0R=!0D,G("`@("`@3$E415)!3"P@5T]22U,@3$E+12!3
+M5$<*("`@("`@("`@($H@("`@("`@($1."B`@("`@("`@("!,5$]21PI$3B`@
+M("`@("`@3$13("`@("`C,30*("`@("`@("`@($Q$5"`@("`@/4,G04)#1"<@
+M("`@($Q)5$5204PL(%)%1R!4(%=)3$P*("`@("`@("`@($Q43U)'"B`@("`@
+M("`@("!354(@("`@(#U8)S%%)PI86"`@("`@("`@4E-50@I"24<@("`@("`@
+M4D530B`@("`@,SDY.0I.54T@("`@("`@4D535R`@("`@,PH@("`@("`@("`@
+#14Y$
+`
+end
+SHAR_EOF
+  (set 20 15 03 26 18 43 47 'file1.txt'; eval "$shar_touch") &&
+  chmod 0644 'file1.txt'
+if test $? -ne 0
+then ${echo} 'restore of file1.txt failed'
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} 'file1.txt: MD5 check failed'
+       ) << \SHAR_EOF
+b21e0cfb953f4a50c0cecf9bf1683913  file1.txt
+SHAR_EOF
+  else
+test `LC_ALL=C wc -c < 'file1.txt'` -ne 588 && \
+  ${echo} 'restoration warning:  size of file1.txt is not 588'
+  fi
+fi
+# ============= file.txt ==============
+if test -f 'file.txt' && test "$first_param" != -c; then
+  ${echo} 'x -SKIPPING file.txt (file already exists)'
+else
+${echo} 'x - extracting file.txt (binary)'
+  sed 's/^X//' << 'SHAR_EOF' | uudecode &&
+begin 600 file.txt
+M*TQ$0B`T(`I-54Q2(#(@"BM34TL@-"`*5T0@,R`**E-46"`S(`HJ3U(@,R`*
+M04Y$(#,@"BI,1$$@,R`**TI'5"`T(`HK4U1,(#0@"BI71"`S(`HK4U1)(#0@
+M"DQ04R`S(`HK3$14(#0@"BI,1$-((#,@"BI,1$P@,PI425A2(#(@"E-50D8@
+M,R`**DI354(@,R`*3$18(#,@"BM-54Q&(#0@"BM*(#0@"E-60R`R(`I35%0@
+M,R`**T-/35`@-"`*5$E8(#,@"D9,3T%4(#$@"DQ$5"`S(`I35$$@,R`**E1$
+M(#,@"E-(24944B`R(`I35$(@,R`*4TE/(#$@"DQ$02`S(`I(24\@,2`**U-4
+M4R`T(`I$259&(#,@"BI425@@,R`**TI354(@-`I,1$-((#,**T-/35!&(#0*
+M2D51(#,**D1)5B`S"BM35%0@-`HK4U5"1B`T"BI!3D0@,R`**T]2(#0*4U-+
+M(#,**TI,5"`T(`HJ4D0@,R`*3$13(#,@"BI-54P@,R`**TQ$4R`T(`HK1$E6
+M(#0@"DH@,R`**TU53"`T(`HJ0T]-4"`S(`HK4U18(#0@"BI*(#,@"BM,1$$@
+M-"`**U-50B`T(`HK4U1"(#0@"BI*3%0@,R`*4U5"(#,@"BM!1$1&(#0@"E)$
+M(#,@"BI*15$@,R`*3$1"(#,@"E)354(@,R`*355,1B`S(`I*4U5"(#,@"E-5
+M0E(@,B`*1$E64B`R(`I,1$P@,R`**TI%42`T(`HK4U1#2"`T(`HJ4U1,(#,@
+M"BM35$$@-"`*4U135R`S(`I#3TU01B`S(`HK1$E61B`T(`HK4U1&(#0@"E1)
+M3R`Q"BI!1$0@,PHJ4U135R`S"BM35%-7(#0@"BM,4%,@-"`*2DQ4(#,@"BI*
+M1U0@,R`*355,(#,@"BM,1$P@-"`*3U(@,R`*0T]-4"`S(`I41"`S(`I35%,@
+M,R`**E-40T@@,R`*3$1&(#,@"D%$1"`S(`I&25@@,2`**E)354(@,R`*3D]2
+M32`Q(`I35$8@,R`**DQ$6"`S(`I#3$5!4B`R(`HK4E-50B`T(`I!1$1&(#,@
+M"BM71"`T(`HK3$1#2"`T(`HK3$1&(#0@"BM,1%@@-"`*4U1#2"`S(`HK041$
+M(#0@"BM!3D0@-"`**E-50B`S(`I35%@@,R`*4DU/(#(@"D-/35!2(#(@"E-(
+M24943"`R(`I35$P@,R`**U1$(#0@"D%$1%(@,B`*4U1)(#,@"BM425@@-"`*
+M*E-402`S(`I*1U0@,R`*1$E6(#,@"BM21"`T(`I!(#`*6"`Q"DP@,@I00R`X
+M"E-7(#D*0B`S"E,@-`I4(#4*1B`V"E=/4D0@,PI215-7(#$*0D%312`P"D5.
+61"`P("`*3%1/4D<@,`I215-"(#$@(%=/
+`
+end
+SHAR_EOF
+  (set 20 15 03 26 18 24 24 'file.txt'; eval "$shar_touch") &&
+  chmod 0644 'file.txt'
+if test $? -ne 0
+then ${echo} 'restore of file.txt failed'
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} 'file.txt: MD5 check failed'
+       ) << \SHAR_EOF
+cfeba46fecdbe65b68db0f653d7cc068  file.txt
+SHAR_EOF
+  else
+test `LC_ALL=C wc -c < 'file.txt'` -ne 1057 && \
+  ${echo} 'restoration warning:  size of file.txt is not 1057'
+  fi
+fi
+# ============= hashTable.java ==============
+if test -f 'hashTable.java' && test "$first_param" != -c; then
+  ${echo} 'x -SKIPPING hashTable.java (file already exists)'
+else
+${echo} 'x - extracting hashTable.java (binary)'
+  sed 's/^X//' << 'SHAR_EOF' | uudecode &&
+begin 600 hashTable.java
+M#0H-"FEM<&]R="!J879A+FEO+D9I;&5.;W1&;W5N9$5X8V5P=&EO;CL-"FEM
+M<&]R="!J879A+G5T:6PN07)R87E,:7-T.PT*:6UP;W)T(&IA=F$N=71I;"Y3
+M8V%N;F5R.PT*#0IP=6)L:6,@8VQA<W,@:&%S:%1A8FQE('L-"@T*<')I=F%T
+M92!B;V]L96%N(&1B;$QA8F5L(#T@9F%L<V4[#0IP<FEV871E(&)O;VQE86X@
+M;F],86)E;"`](&9A;'-E.PT*<')I=F%T92!3=')I;F=;72!S>6U.=6U486)L
+M92`](&YE=R!3=')I;F=;,C$Q73L)#0IP<FEV871E(&EN=%M=(&YU;51A8FQE
+M(#T@;F5W(&EN=%LR,3%=.PT*<')I=F%T92!3=')I;F=;72!H87-H5&%B;&4@
+M/2!N97<@4W1R:6YG6S(Q,5T[#0IP<FEV871E(&EN="!K97D[#0IP<FEV871E
+M(%-T<FEN9UM=('1O:V5N<SL-"D%R<F%Y3&ES=#Q3=')I;F<^('-Y;51A8FQE
+M(#T@;F5W($%R<F%Y3&ES=#Q3=')I;F<^*"D[#0IP<FEV871E(&EN="!A(#T@
+M,#L)#0IP=6)L:6,@:&%S:%1A8FQE*"D@=&AR;W=S($5X8V5P=&EO;@T*>PT*
+M"0T*"7)E861&:6QE*"D[#0I]#0H-"G!U8FQI8R!H87-H5&%B;&4H:6YT('HI
+M#0I[#0H)#0I]#0H-"@T*<')I=F%T92!V;VED(')E861&:6QE*"D@=&AR;W=S
+M($5X8V5P=&EO;@T*>PT*"6EN="!I(#T@,#L-"@E3=')I;F=;72!I;G!U=$1A
+M=&$@/2!N97<@4W1R:6YG6S(Q,5T[#0H-"@EJ879A+FEO+D9I;&4@9FEL92`]
+M(&YE=R!J879A+FEO+D9I;&4H(F9I;&4N='AT(BD[+R]296%D('1H92!D871A
+M(&9R;VT@=&AE(&9I;&4-"@E38V%N;F5R(&EN<'5T(#T@;F5W(%-C86YN97(H
+M9FEL92D[#0H-"@D@('=H:6QE*&EN<'5T+FAA<TYE>'1,:6YE*"DI#0H@("`@
+M("![#0H@("`@"2`@+R]3=&]R92!D871A(&EN=&\@4W1R:6YG(&%R<F%Y#0H@
+M("`@("`@("!I;G!U=$1A=&%;:5T@/2!I;G!U="YN97AT3&EN92@I.PT*("`@
+M("`@("`@#0H@("`@("`@("`O*E-P;&ET(&9I<G-T(&QI;F4@;V8@9&%T82!I
+M;G1O(&YE=R!3=')I;F<@87)R87D@8V%L;&5D('1O:V5N<PT*("`@("`@("`@
+M("H@:68@=&AE(&%R<F%Y('-I>F4@:7,@,B!W92!W:6QL('-T;W)E('1H92!D
+M871A#0H@("`@("`@("`@*B!I9B!T:&4@87)R87D@<VEZ92!I<R`Q('=E('=I
+M;&P@<V5A<F-H(&9O<B!T:&4@9&%T80T*("`@("`@(`DJ+PT*("`@("`@("`@
+M#0H@("`@("`@("!T;VME;G,@/2!I;G!U=$1A=&%;:5TN<W!L:70H(B`B*3L-
+M"B`@("`@("`@(&ME>2`](&-O;G9E<G14;T-H87(H=&]K96YS6S!=*3L-"B`@
+M("`@("`@(&EF*'1O:V5N<RYL96YG=&@@/3T@,BD-"B`@("`@("`@(&1O4W1U
+M9F8H*3L-"B`@("`@("`@(&5L<V4-"B`@("`@("`@"6ES5&AE<F4H=&]K96YS
+M6S!=*3L-"B`@("`@('T-"@D@(&DK*SL-"GT-"@T*<')I=F%T92!V;VED(&1O
+M4W1U9F8H:6YT('HI#0I[#0H-"@EI;G0@:V5Y.PT*("`@(`T*("`@(`T*("`@
+M("\J4W!L:70@9FER<W0@;&EN92!O9B!D871A(&EN=&\@;F5W(%-T<FEN9R!A
+M<G)A>2!C86QL960@=&]K96YS#0H@("`@("H@:68@=&AE(&%R<F%Y('-I>F4@
+M:7,@,B!W92!W:6QL('-T;W)E('1H92!D871A#0H@("`@("H@:68@=&AE(&%R
+M<F%Y('-I>F4@:7,@,2!W92!W:6QL('-E87)C:"!F;W(@=&AE(&1A=&$-"B`@
+M"2HO#0H@("`@4W1R:6YG6UT@=&]K96YS(#T@<WEM5&%B;&4N9V5T*&$I+G-P
+M;&ET*"(@(BD[#0H@(`T*("`)+R]H87-H#0H@("`@:V5Y(#T@8V]N=F5R=%1O
+M0VAA<BAT;VME;G-;,%TI.PD-"B`@9&)L3&%B96P@/2!F86QS93L-"B`@("!I
+M9BAT;VME;G,N;&5N9W1H(#T](#(I"0D-"B`@("!["0T*("`@"2`-"B`@(`D@
+M#0H@("`)(&)O;VQE86X@8V]N=')O;"`]('1R=64[#0H@("`)("\O=VAI;&4@
+M;F]T(&AA<VA486)L92!I<R!N;W0@96UP='D@*&QI;F5A<B!P<F]B:6YG*0T*
+M("`@("`@('=H:6QE*&AA<VA486)L95MK97E=("$](&YU;&PI#0H@("`@("`@
+M>PT*("`@("`@(`D@:68H:&%S:%1A8FQE6VME>5TN97%U86QS*'1O:V5N<ULP
+M72DI#0H@("`@("`@("`@("![#0H@("`@("`@"0D@("!D8FQ,86)E;"`]('1R
+M=64[#0H@("`@("`@("`@("`)8V]N=')O;"`](&9A;'-E.PT*("`@("`@("`@
+M("`@?0T*("`@("`@("`@(&ME>2LK.PT*("`@("`@("`@(&ME>2`E/2`R,3$[
+M#0H@("`@("`@#0H@("`@("`@?0T*("`@("`@(`T*("`@("`@:68H8V]N=')O
+M;"`]/2!T<G5E*7L-"B`@("`@("!H87-H5&%B;&5;:V5Y73T@=&]K96YS6S!=
+M.PT*("`@("`@('-Y;4YU;51A8FQE6VME>5T@/2!T;VME;G-;,5T[#0H@("`@
+M("`@9&)L3&%B96P@/2!F86QS93L-"B`@("`@("!N;TQA8F5L(#T@9F%L<V4[
+M#0H@("`@("!]"0T*("`@('T-"B`@("!E;'-E#0H@("`@>PT*("`@("`@(&)O
+M;VQE86X@8V]N=')O;"`](&9A;'-E.PT*("`@("`@("\O(&QO;VL@=6YT:6P@
+M>6]U(&9I;F0@:70@;W(@>6]U(&9I;F0@82!N=6QL#0H@("`@("`@=VAI;&4H
+M*&AA<VA486)L95MK97E=(3UN=6QL*2`F)B`A:&%S:%1A8FQE6VME>5TN97%U
+M86QS*'1O:V5N<ULP72DI#0H@("`@("`@>PD-"B`@("`@("`@("!K97DK*SL-
+M"B`@("`@("`@("!K97D@)3T@,C$Q.PT*("`@("`@(`T*("`@("`@("!]#0H@
+M("`@("`@+R]C:&5C:R!I9B!I="!W87,@82!N=6QL("AG:79E(&%N(&5R<F]R
+M*0T*("`@("`@(&EF*&AA<VA486)L95MK97E=(#T](&YU;&PI#0H@("`@("`@
+M>PT*("`@("`)("!N;TQA8F5L(#T@=')U93L-"B`@("`@("!]#0H@("`@("`@
+M#0H@("`@("`@#0H@("`@("`@96QS92`O+W!R;V-E<W,@=&AE(&9O=6YD('1H
+M:6YG#0H@("`@("`@>PT*("`@("`@("`@(&YO3&%B96P@/2!F86QS93L-"B`@
+M("`@("`)(&1B;$QA8F5L(#T@9F%L<V4[#0H@("`@("`@?0T*("`@(`T*("`@
+M('T-"GT-"@T*<')I=F%T92!I;G0@:&%S:$ME>2AI;G0@8V]D92D-"GL-"B`@
+M(&EN="!A<G)A>5-I>F4@/2`R,3$[#0H@("!C;V1E(#T@8V]D92`E(&%R<F%Y
+M4VEZ93L-"B`@(')E='5R;B!C;V1E.PT*#0I]+R]E;F0@:&%S:$ME>0T*#0IP
+M<FEV871E(&EN="!C;VYV97)T5&]#:&%R*%-T<FEN9R!I;G!U=$1A=&$I#0I[
+M#0H@("!I;G0@:&%S:$9C;CL-"B`@(&EN="!N=6UB97(@/2`P.PT*("`@8VAA
+M<EM=(&%S8VEI(#T@:6YP=71$871A+G1O0VAA<D%R<F%Y*"D[#0H@("!F;W(H
+M:6YT(&D@/2`P.R!I(#P@87-C:6DN;&5N9W1H.R!I*RLI#0H@("![#0H@("`@
+M("!N=6UB97(@/2`H:6YT*6%S8VEI6VE=("L@;G5M8F5R.PT*("`@?0T*"0T*
+M("`@:&%S:$9C;B`](&AA<VA+97DH;G5M8F5R*3L-"@T*("`@<F5T=7)N(&AA
+M<VA&8VX[#0H)#0I]+R]E;F0@8V]N=F5R=%1O0VAA<@T*#0IP<FEV871E('9O
+M:60@9&]3='5F9B@I#0I[#0H)#0H)"2!W:&EL92AH87-H5&%B;&5;:V5Y72`A
+M/2!N=6QL*0T*("`@("`@("`@>PT*("`@("`@("`@#0H@("`@("`@("`@("!K
+M97DK*SL-"B`@("`@("`@("`@(&ME>2`E/2`R,3$[#0H@("`@("`@("`-"B`@
+M("`@("`@('T-"B`@("`@("`@(`T*("`@("`@("`-"B`@("`@("`@(&AA<VA4
+M86)L95MK97E=/2!T;VME;G-;,%T[#0H@("`@("`@("!N=6U486)L95MK97E=
+M(#T@26YT96=E<BYP87)S94EN="AT;VME;G-;,5TI.PT*#0H@("`@("`@#0I]
+M#0H-"@D-"G!U8FQI8R!B;V]L96%N(&ES5&AE<F4H4W1R:6YG(&-H96-K*0T*
+M>PT*"6EN="!N97=+97D@/2!C;VYV97)T5&]#:&%R*&-H96-K*3L-"B`@("`O
+M+R!L;V]K('5N=&EL('EO=2!F:6YD(&ET(&]R('EO=2!F:6YD(&$@;G5L;`T*
+M("`@('=H:6QE*"AH87-H5&%B;&5;;F5W2V5Y72$];G5L;"DI#0H@("`@>PD-
+M"B`@("`):68H:&%S:%1A8FQE6VYE=TME>5TN97%U86QS*&-H96-K*2D-"B`@
+M("`)"0ER971U<FX@=')U93L-"B`@("`)#0H@("`@("`@;F5W2V5Y*RL[#0H@
+M("`@("`@;F5W2V5Y("4](#(Q,3L-"B`@("`-"B`@("`@("`-"B`@("!]#0H@
+M("`@("`@<F5T=7)N(&9A;'-E.PT*(`T*(`T*(`T*?0T*#0IP=6)L:6,@8F]O
+M;&5A;B!D;W5B;&5,86)E;"A3=')I;F<@8VAE8VLI#0I[#0H):6YT(&YE=TME
+M>3$@/2!C;VYV97)T5&]#:&%R*&-H96-K*3L-"@EB;V]L96%N(&-O;G1R;VP@
+M/2!T<G5E.PT*"7=H:6QE*&-O;G1R;VPI#0H)>PT*"2`@('=H:6QE*&AA<VA4
+M86)L95MN97=+97DQ72`A/2!N=6QL*0T*("`@("`@('L-"B`@("`@("`)(&EF
+M*&AA<VA486)L95MN97=+97DQ72YE<75A;',H8VAE8VLI*0T*("`@("`@("`@
+M("`@>PT*("`@("`@(`D)(`EC;VYT<F]L(#T@9F%L<V4[#0H@("`@("`@"0D@
+M"7)E='5R;B!T<G5E.PT*("`@("`@("`@("`@"0T*("`@("`@("`@("`@?0T*
+M("`@("`@("`@(&YE=TME>3$K*SL-"B`@("`@("`@("!N97=+97DQ("4](#(Q
+M,3L-"B`@("`@("!]#0H)?0T*"2`@(')E='5R;B!F86QS93L-"GT-"@T*<'5B
+M;&EC(&EN="!G971&;W)M870H4W1R:6YG(&]P*0T*>PT*"6EN="!F;W)M870[
+M#0H):6YT(&YE=TME>2`](&-O;G9E<G14;T-H87(H;W`I.PT*"2!W:&EL92@H
+M:&%S:%1A8FQE6VYE=TME>5TA/6YU;&PI("8F("%H87-H5&%B;&5;;F5W2V5Y
+M72YE<75A;',H;W`I*0T*"2`@("!["0T*"2`@("`@("!N97=+97DK*SL-"@D@
+M("`@("`@;F5W2V5Y("4](#(Q,3L-"@D@("`@?0T*9F]R;6%T(#T@;G5M5&%B
+M;&5;;F5W2V5Y73L-"G)E='5R;B!F;W)M870[#0I]#0H-"G!U8FQI8R!V;VED
+M('-E=%-Y;51A8FQE*%-T<FEN9R!L86)E;$%D9')E<W,I#0H)>PT*"0D-"@D)
+M:6YT('H@/2`R.PT*"0ES>6U486)L92YA9&0H;&%B96Q!9&1R97-S*3L-"@D)
+M9&]3='5F9BAZ*3L-"@D)82LK.PT*"7T-"@T*<'5B;&EC(&)O;VQE86X@:7-%
+M;7!T>2@I#0H)>PT*"0EI9B@A<WEM5&%B;&4N:7-%;7!T>2@I*0T*"0D)<F5T
+M=7)N('1R=64[#0H)"65L<V4-"@D)("`@<F5T=7)N(&9A;'-E.PT*"7T-"@T*
+M<'5B;&EC('9O:60@9&ES<&QA>51A8FQE*"D-"@E[#0H)"6EN="!N97=+97D[
+M#0H)"5-T<FEN9R!T86)L92`](E1A8FQE(CL-"@D)4W1R:6YG(&QA8F5L(#TB
+M3&%B96PB.PT*"0E3=')I;F<@861D<F5S<R`](D%D9')E<W,B.PT*"0E3>7-T
+M96TN;W5T+F9O<FUA="@B7&Y<;EQN)2TQ,',E+3$P<R4M,3!S7&XB+'1A8FQE
+M+&QA8F5L+&%D9')E<W,I.PT*"0D-"@D)9F]R*&EN="!I(#T@,#L@:2`\('-Y
+M;51A8FQE+G-I>F4H*3L@:2LK*0T*"0E[#0H)"0D-"@D)"5-T<FEN9UM=('1O
+M:V5N<S$@/2!S>6U486)L92YG970H:2DN<W!L:70H(B`B*3L-"@D)"6YE=TME
+M>2`](&-O;G9E<G14;T-H87(H=&]K96YS,5LP72D[#0H)"0EW:&EL92AS>6U.
+M=6U486)L95MN97=+97E=("$](&YU;&P@*0T*"0D)>PT*"0D)"6YE=TME>2LK
+M.PT*"0D)"6YE=TME>2`E/2`R,3$[#0H)"0E]#0H)"0E3>7-T96TN;W5T+F9O
+M<FUA="@B)2TQ,',E+3$P<R4M,3!S7&XB+&YE=TME>2QT;VME;G,Q6S!=+'1O
+M:V5N<S%;,5TI.PT*"0E]#0H)"0T*"0D-"@E]#0H-"G!U8FQI8R!B;V]L96%N
+M(&=E=$YO3&%B96PH*0T*>PT*"7)E='5R;B!N;TQA8F5L.PT*?0T*#0IP=6)L
+M:6,@8F]O;&5A;B!G971$8FQ,86)E;"@I#0I[#0H)<F5T=7)N(&1B;$QA8F5L
+M.PT*?0T*#0IP=6)L:6,@=F]I9"!S971$8FQ,86)E;"AB;V]L96%N(&-O;G1R
+M;VQL97(I#0I[#0H)9&)L3&%B96P@/2!C;VYT<F]L;&5R.PT*?0T*<'5B;&EC
+M('9O:60@<V5T4F5M;W9E*"D-"GL-"@ES>6U486)L92YR96UO=F4H82TQ*3L-
+A"@EA+2T[#0I]#0H-"GTO+V5N9"!H87-H5&%B;&4-"@T*
+`
+end
+SHAR_EOF
+  (set 20 15 03 26 18 55 24 'hashTable.java'; eval "$shar_touch") &&
+  chmod 0644 'hashTable.java'
+if test $? -ne 0
+then ${echo} 'restore of hashTable.java failed'
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} 'hashTable.java: MD5 check failed'
+       ) << \SHAR_EOF
+261a2f3df02f7e6fd10952d51b49d71a  hashTable.java
+SHAR_EOF
+  else
+test `LC_ALL=C wc -c < 'hashTable.java'` -ne 5568 && \
+  ${echo} 'restoration warning:  size of hashTable.java is not 5568'
+  fi
+fi
+# ============= project3.java ==============
+if test -f 'project3.java' && test "$first_param" != -c; then
+  ${echo} 'x -SKIPPING project3.java (file already exists)'
+else
+${echo} 'x - extracting project3.java (text)'
+  sed 's/^X//' << 'SHAR_EOF' > 'project3.java' &&
+X
+X
+import java.util.*;
+/*Project 3 Pass 1
+X * Author:Vedran Pehlivanovic
+X * Date:03/25/2015
+X * 
+X * This program is pass 1 of the assembler. It integrates the hash table from project 1 by storing mneumoics and
+X * their formats. Varies methods are used to convert Strings into integers and back into hex strings
+X * Checks for literals and errors
+X * 
+X */
+X
+X
+public class project3 {
+X	
+X
+X
+X   public static void main(String[] args) throws Exception {
+X	   
+X   hashTable table = new hashTable();
+X   hashTable table1 = new hashTable(1);
+X   hashTable table2 = new hashTable(2);  
+X   storeStuff(table,table1,table2);
+X   	
+X   }
+X   
+X   public static void storeStuff(hashTable table1,hashTable table3,hashTable table4) throws Exception
+X   {
+X	   
+X	   
+X	   
+X	   java.io.File table = new java.io.File("file1.txt");
+X	   
+X	   Scanner input2 = new Scanner(table);
+X	   
+X	   ArrayList<String> reader = new ArrayList<String>();
+X	   
+X	   ArrayList<String> label = new ArrayList<String>();
+X	   
+X	   ArrayList<String> mneumoics = new ArrayList<String>();
+X	   
+X	   ArrayList<String> operands = new ArrayList<String>();
+X	   
+X	   ArrayList<String> address = new ArrayList<String>();
+X	   
+X	   ArrayList<String> LTORGString = new ArrayList<String>();
+X	   
+X	   ArrayList<String> LTORGBytes= new ArrayList<String>();
+X	   
+X	   ArrayList<String> symTable = new ArrayList<String>();
+X	   
+X	   boolean control;
+X	   int i = 0;
+X	   int a = 0;
+X	   int m = 0;
+X	   int o = 0;
+X	   int l = 0;
+X	   int LTORG = 0;
+X	   int literal = 0;
+X	   int append = 0;
+X	   boolean LTORGcontrol = false;
+X	   int LTORGend = 0;
+X	   boolean LTORGinvalid = false;
+X	   int mulLTORG = 1;
+X	   
+X	   while(input2.hasNextLine())
+X	   {
+X		   
+X		   
+X		   control = true;
+X		   reader.add(input2.nextLine()); 
+X		   while(control)
+X		   {	
+X			   //if the line starts with a "." just print it and end the loop
+X			   if(reader.get(i).startsWith("."))
+X			   	{
+X				   System.out.println(reader.get(i));
+X				   control = false;
+X				   
+X			   
+X			   	}
+X			   //if the line contains "START" 
+X			   else if(reader.get(i).contains("START"))
+X			   {
+X				   //store the address
+X				   address.add(reader.get(i).substring(18).trim());
+X				   
+X				   a++;
+X				   
+X				   System.out.print(address.get(a-1));
+X				   
+X				   System.out.println("\t" + reader.get(i));
+X				   
+X				   //if there is no space in the label column store a label
+X				if(!reader.get(i).startsWith(" "))
+X				{
+X				   label.add(reader.get(i).substring(0,9).trim());
+X				   
+X				   table3.setSymTable(label.get(l) + " "  + address.get(a-1));
+X				   l++;
+X				   
+X				}
+X					control = false;
+X			   }
+X			   //if a blank line skip it
+X			   else if(reader.get(i).startsWith(" ") && reader.get(i).length() == 1)
+X			   {
+X				   control = false;
+X			   }
+X			   else
+X			   {
+X				   //store operands
+X				   if(reader.get(i).length() > 28)
+X				   {	if(reader.get(i).substring(18, 28).trim().contains(","))
+X				   		{
+X					   		String[] tokens = reader.get(i).substring(18,29).trim().split(",");
+X					   		operands.add(tokens[0]);
+X					   		o++;
+X				   		}
+X				   		else
+X				   			{
+X				   			operands.add(reader.get(i).substring(18,28).trim());
+X				   			o++;
+X				   			}
+X				   }
+X				   else if(reader.get(i).length() > 15)
+X				   {	
+X					   
+X					   if(reader.get(i).substring(18).trim().contains(","))
+X					   {
+X						   String[] tokens = reader.get(i).substring(18).trim().split(",");
+X						   operands.add(tokens[0]);
+X						   o++;
+X					   }
+X					   	else
+X					   	{
+X						   operands.add(reader.get(i).substring(18).trim());
+X						   o++;
+X					   	}
+X				   }
+X				   
+X				   //store labels
+X				   if(reader.get(i).length() > 8 && !reader.get(i).startsWith(" "))
+X				   {
+X					   label.add(reader.get(i).substring(0,8).trim());
+X					   l++;
+X					   table3.setSymTable(label.get(l-1) + " " + address.get(a-1));
+X				   }
+X				   
+X				   //store mneumoics
+X				   if(reader.get(i).length() > 17)
+X				   {
+X					   mneumoics.add(reader.get(i).substring(10,16).trim());
+X					   
+X				   }
+X				   else
+X				   {
+X					   mneumoics.add(reader.get(i).substring(10).trim());
+X				   }
+X				   
+X
+X				   //store literals
+X				   if(operands.get(o-1).startsWith("=") && reader.get(i).length() > 15 )
+X				   {
+X					   if(operands.get(o-1).contains(","))
+X					   {
+X						   String[] tokens = operands.get(o-1).split(",");
+X					   
+X					   		if(tokens[0].charAt(2) != '\'' || tokens[0].charAt(tokens[0].length()-1) != '\'')
+X					   		{
+X				   			
+X					   			LTORGcontrol = true;
+X					   			LTORGinvalid = true;
+X					   			LTORGBytes.add("0");
+X					   			LTORGString.add(tokens[0]);
+X					   			literal++;
+X					   			LTORG++;
+X					   		}
+X					   			else
+X			   						{
+X				   						LTORGBytes.add(LTORG(tokens[0]));
+X				   						LTORGString.add(tokens[0]);
+X				   						literal++;
+X				   						LTORG++;
+X				   						LTORGcontrol = true;
+X			   						}
+X					   }
+X					   else if(operands.get(o-1).charAt(2) != '\'' || operands.get(o-1).charAt(operands.get(o-1).length()-1) != '\'')
+X							   {
+X						   			
+X						   			LTORGcontrol = true;
+X						   			LTORGinvalid = true;
+X						   			LTORGBytes.add("0");
+X						   			LTORGString.add(operands.get(o-1));
+X						   			literal++;
+X						   			LTORG++;
+X							   }
+X					   else
+X					   {
+X					   LTORGBytes.add(LTORG(operands.get(o-1)));
+X					   LTORGString.add(operands.get(o-1));
+X					   literal++;
+X					   LTORG++;
+X					   LTORGcontrol = true;
+X					   }
+X				   }
+X				   
+X				   //format the Strings into hex integers and add them to the address ArrayList
+X				   
+X				   address.add(format(address.get(a-1),mneumoics.get(m),table1,operands.get(o-1)));
+X				   
+X  
+X				   System.out.print(address.get(a-1));
+X				   
+X				   a++;
+X				   
+X				   System.out.println("\t" + reader.get(i));
+X				   
+X				   /*if(table3.getNoLabel() == true)
+X				   {
+X					  System.out.println("********** ERROR: Operand not found in symbol table"); 
+X				   }*/
+X				   if(LTORGinvalid == true)
+X				   {
+X					   System.out.println("********** WARNING: quote missing in operand field");
+X					   LTORGinvalid = false;
+X				   }
+X				  if(table3.getDblLabel() == true)
+X				   {
+X					  System.out.println("********** ERROR: Duplicate label found"); 
+X					  table3.setDblLabel(false);
+X					  table3.setRemove();
+X				   }
+X				   
+X				   //check if the mnemoic is valid
+X				   if(table1.isThere(mneumoics.get(m)) == false)
+X					   System.out.println("********** ERROR: Unsupported opcode found");
+X				    m++;
+X				    
+X				    //print the literals if mneumoics is equal to LTORG
+X				   if(mneumoics.get(m -1).equals("LTORG"))
+X				   {
+X					   LTORGcontrol = false;
+X					   for(int v = mulLTORG - 1; v < LTORGString.size(); v++)
+X					   {
+X						   if(LTORGString.get(v).charAt(2) != '\'' || LTORGString.get(v).charAt(LTORGString.get(v).length()-1) != '\'')
+X						   {
+X							   System.out.println(address.get(a-1) + "\t" + LTORGString.get(v)+ "   BYTE\t   " + LTORGString.get(v).substring(1));
+X							   System.out.println("********** ERROR: Invalid hex digit found in the operand");
+X						   }
+X						   //check if the hex is a even number
+X					   else if(oddOrEven(LTORGString.get(v)) == true)
+X						   {
+X						   address.add(format(address.get(a-1),LTORGBytes.get(v)));
+X						   label.add(LTORGString.get(v));
+X						   l++;
+X						   table3.setSymTable(label.get(l-1) + " " + address.get(a-1));
+X						   System.out.println(address.get(a-1) + "\t" +LTORGString.get(v) + "   BYTE\t   " + LTORGString.get(v).substring(1));
+X						   a++;
+X						   LTORGend++;
+X						   mulLTORG++;
+X						   }
+X						   else if(oddOrEven(LTORGString.get(v)) == false)
+X						   {
+X							   String zero = "0";
+X							   address.add(format(address.get(a-1),zero));
+X							   System.out.println(address.get(a-1) + "\t" +LTORGString.get(v) + "   BYTE\t   " + LTORGString.get(v));
+X							   System.out.println("********** ERROR: Odd number of X bytes found in operand field ");
+X							   a++;
+X							   LTORGend++;
+X							   mulLTORG++;
+X							   
+X						   }
+X					   }   
+X	   
+X				   }
+X				   //if there is no LTORG mneumoic print the literals after the END mneumoic
+X				   else if(LTORGcontrol == true)
+X				   {
+X					   if(mneumoics.get(m-1).equals("END"))
+X					   {
+X						   for(int y = LTORGend; y < LTORGString.size(); y++)
+X						   {
+X							   if(oddOrEven(LTORGString.get(y)) == true)
+X							   {
+X								   address.add(format(address.get(a-1),LTORGBytes.get(y)));
+X								   label.add(LTORGString.get(y));
+X								   l++;
+X								   table3.setSymTable(label.get(l-1) + " " + address.get(a-1));
+X								   System.out.println(address.get(a-1) +"\t" +LTORGString.get(y) + "   BYTE\t   " + LTORGString.get(y));
+X								   a++;
+X							   }
+X							   	else if(oddOrEven(LTORGString.get(y)) == false)
+X							   		{
+X							   			String zero = "0";
+X							   			address.add(format(address.get(a-1),zero));
+X							   			System.out.println(address.get(a-1) + "\t" +LTORGString.get(y) + "   BYTE\t   " + LTORGString.get(y));
+X							   			System.out.println("********** ERROR: Odd number of X bytes found in operand field ");
+X							   			a++;
+X							   		}   
+X						   }
+X					   }
+X				   }
+X				  
+X				  
+X				   control = false;
+X			   }
+X		   
+X   }
+X		   
+X		   i++;
+}
+X	   
+X	   //display the table
+X	 table3.displayTable();
+X   }//end storeStuff
+X   
+/*method parameters are String address, String mn, a hashTable, and String reswString
+X * it calculates the hex address by calling the hashTable and get the format
+X * converts everything into hex strings
+*/
+public static String format(String address, String mn, hashTable table2,String reswString)
+{
+X	String resw = "3";
+X	
+X	
+X	if(mn.equals("RESW"))
+X	{
+X		  int num = Integer.parseInt(address,16);
+X		  int otherNum = Integer.parseInt(reswString);
+X		  int reswNum = Integer.parseInt(resw);
+X		  
+X		  int finalNum = (otherNum * reswNum) + num;
+X		  return hex(finalNum);
+X	}
+X	else if(mn.equals("RESB"))
+X	{
+X		int num = Integer.parseInt(address,16);
+X		int otherNum = Integer.parseInt(reswString);
+X		int finalNum = num + otherNum;
+X		return hex(finalNum);
+X	}
+X	else
+X	{	
+X		int hexFormat = table2.getFormat(mn);
+X		int num = Integer.parseInt(address,16);
+X		int finalnum1 = hexFormat + num;
+X		return hex(finalnum1);
+X	}
+}
+X
+/*Takes in string address, string mn
+X * returns it formatted into a string
+X * formats everything into hex strings
+X */
+public static String format(String address, String mn)
+{
+X	int hexFormat = Integer.parseInt(mn);
+X	int num = Integer.parseInt(address,16);
+X	int finalnum1 = hexFormat + num;
+X	return hex(finalnum1);
+}
+X
+//formats the hex string into a integer
+public static String hex(int dec)
+{
+X	String hex = Integer.toHexString(dec);
+X	return hex;
+}
+X
+/*Takes in a String Literal
+X * checks if it starts with a =X or =C
+X * if it starts with =X makes divides it by 2 and returns that value
+X */
+public static String LTORG(String literal)
+{
+X	
+X	int numOfBytes;
+X	String hexNumOfBytes;
+X	if(literal.startsWith("=X"))
+X	{
+X		literal = literal.substring(3, literal.length()-1);
+X		numOfBytes = literal.length() / 2;
+X		hexNumOfBytes = Integer.toHexString(numOfBytes);
+X		return hexNumOfBytes;
+X	}
+X	else
+X	{
+X		literal = literal.substring(3,literal.length() -1);
+X		numOfBytes = literal.length();
+X		hexNumOfBytes = Integer.toHexString(numOfBytes);
+X		return hexNumOfBytes;
+X	}
+X	
+}
+X
+/*
+X * Checks if a literal that starts with =X is odd or even
+X */
+public static boolean oddOrEven(String literal)
+{
+X	
+X	if(literal.startsWith("=X"))
+X		{
+X	literal = literal.substring(3,literal.length()-1);
+X	if(literal.length()%2 != 0)
+X		return false;
+X		
+X	else
+X		return true;
+X		}
+X	else
+X		return true;
+X	
+}
+X
+}
+SHAR_EOF
+  (set 20 15 03 26 19 20 36 'project3.java'; eval "$shar_touch") &&
+  chmod 0644 'project3.java'
+if test $? -ne 0
+then ${echo} 'restore of project3.java failed'
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} 'project3.java: MD5 check failed'
+       ) << \SHAR_EOF
+73ed629c4c781d31c1c370ae4367d5a7  project3.java
+SHAR_EOF
+  else
+test `LC_ALL=C wc -c < 'project3.java'` -ne 11419 && \
+  ${echo} 'restoration warning:  size of project3.java is not 11419'
+  fi
+fi
+# ============= p3 ==============
+if test -f 'p3' && test "$first_param" != -c; then
+  ${echo} 'x -SKIPPING p3 (file already exists)'
+else
+${echo} 'x - extracting p3 (text)'
+  sed 's/^X//' << 'SHAR_EOF' > 'p3' &&
+#!/bin/bash
+java project3 $1
+SHAR_EOF
+  (set 20 15 03 26 19 22 57 'p3'; eval "$shar_touch") &&
+  chmod 0777 'p3'
+if test $? -ne 0
+then ${echo} 'restore of p3 failed'
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} 'p3: MD5 check failed'
+       ) << \SHAR_EOF
+fe4d446842556501796596cdcffef9e0  p3
+SHAR_EOF
+  else
+test `LC_ALL=C wc -c < 'p3'` -ne 29 && \
+  ${echo} 'restoration warning:  size of p3 is not 29'
+  fi
+fi
+# ============= text ==============
+if test -f 'text' && test "$first_param" != -c; then
+  ${echo} 'x -SKIPPING text (file already exists)'
+else
+${echo} 'x - extracting text (text)'
+  sed 's/^X//' << 'SHAR_EOF' > 'text' &&
+Name:Vedran Pehlivanovic
+Class: Introduction to Systems Software - COP 3404 TR 12:00pm - 1:40pm
+Project 3
+X
+Description:
+X
+Project 3 creates pass 1
+Pass 1 constructs a symbol table, the addresses associated with each instruction, the addresses of each label.
+It reads a input file in a fixed format and stores labels,addresses,mneumonics, and comments into ArrayLists
+Error checks are performed such as duplicately defined labels,and invalid mneumonics which are  ignored in maintaining addresses and the assembler continues processing.
+X
+Output: To the console is text file and the symbol table
+X
+Input: Is the instruction list file and a file that will be assembled for pass 1
+SHAR_EOF
+  (set 20 15 03 26 18 50 22 'text'; eval "$shar_touch") &&
+  chmod 0644 'text'
+if test $? -ne 0
+then ${echo} 'restore of text failed'
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} 'text: MD5 check failed'
+       ) << \SHAR_EOF
+326b2431ddcf6c45fe96e637395a9cea  text
+SHAR_EOF
+  else
+test `LC_ALL=C wc -c < 'text'` -ne 675 && \
+  ${echo} 'restoration warning:  size of text is not 675'
+  fi
+fi
+# ============= makefile ==============
+if test -f 'makefile' && test "$first_param" != -c; then
+  ${echo} 'x -SKIPPING makefile (file already exists)'
+else
+${echo} 'x - extracting makefile (text)'
+  sed 's/^X//' << 'SHAR_EOF' > 'makefile' &&
+project3.class:project3.java
+X	javac *.java
+SHAR_EOF
+  (set 20 15 03 26 19 22 38 'makefile'; eval "$shar_touch") &&
+  chmod 0644 'makefile'
+if test $? -ne 0
+then ${echo} 'restore of makefile failed'
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} 'makefile: MD5 check failed'
+       ) << \SHAR_EOF
+ff0604cc73b5794f9151809ed317c821  makefile
+SHAR_EOF
+  else
+test `LC_ALL=C wc -c < 'makefile'` -ne 43 && \
+  ${echo} 'restoration warning:  size of makefile is not 43'
+  fi
+fi
+if rm -fr ${lock_dir}
+then ${echo} 'x - removed lock directory `'${lock_dir}\''.'
+else ${echo} 'x - failed to remove lock directory `'${lock_dir}\''.'
+  exit 1
+fi
+exit 0
